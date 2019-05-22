@@ -1,0 +1,4114 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html lang="en">
+    <head>
+        <title>SGLee-Sage-Lab-Manual  -- Sage</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <script type="text/javascript" src="/javascript/jquery/jquery-1.3.2.min.js"></script>
+
+
+<script type="text/javascript">user_name= "guest";</script>
+
+<script  type="text/javascript">
+    worksheet_filename = "pub/2013";
+    worksheet_name = 'SGLee-Sage-Lab-Manual ';
+    server_ping_while_alive();
+</script>
+
+</head>
+
+<body> </body>
+
+<head>
+<script>
+function doSaveAs(){
+    if (document.execCommand){
+        document.execCommand("SaveAs")
+    }
+    else {
+        alert("IE 5.0 이상에서만 가능합니다!")
+    }
+}
+</script>
+
+
+<meta name="viewport" content="user-scalable=yes, initial-scale=device-height, maximum-scale=2.0, munimum-scale=0.1, width=device-height" />
+<link rel="icon" href="http://mathlab.knou.ac.kr:8080/static/favicon.ico">
+<link rel="stylesheet" href="http://mathlab.knou.ac.kr:8080/static/root2.css">
+<script src="http://mathlab.knou.ac.kr:8080/static/jquery.min.js"></script>
+<script src="http://mathlab.knou.ac.kr:8080/embedded_sagecell.js"></script>
+<script>
+$(function() {
+    sagecell.makeSinglecell({
+      inputLocation: '.cell_input_print', linked: true, languages: sagecell.allLanguages, hide: ['computationID', 'messages', 'sessionTitle', 'done', 'sessionFilesTitle', 'sessionFiles', 'files', 'sageMode'], evalButtonText: '실행(Evaluate)'});});
+</script>
+
+</head>
+
+
+
+<body id="guest-worksheet-page" class="">
+
+
+
+
+
+
+
+
+<div class="cell_input_active" id="cell_resizer"></div>
+
+
+
+
+
+
+
+
+<span id="cell_outer_0">
+    
+    <div class="text_cell" id="cell_text_0">
+        
+            <p style="margin-top: 0pt; margin-bottom: 0pt; text-align: left; line-height: 21.333332061767578px; font-size: 10pt; font-family: 함초롬바탕; margin-right: 0.2pt;"><span style="font-size: 40pt; font-family: '맑은 고딕'; line-height: 49.06666564941406px;">Lab Manual for Linear Algebra with Sage</span></p>
+<p style="margin-top: 0pt; margin-bottom: 0pt; text-align: left; line-height: 21.333332061767578px; font-size: 40pt; font-family: 함초롬바탕; margin-right: 0.2pt;"><span style="color: #0000ff; font-family: '맑은 고딕'; font-size: 20pt; line-height: 27.733333587646484px; text-align: right;">Prof. Sang-Gu Lee</span></p>
+<p>&nbsp;</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt; text-align: justify; line-height: 21.333332061767578px; font-size: 10pt; font-family: 함초롬바탕; margin-right: 0.2pt;"><img style="font-family: 함초롬바탕; font-size: 8pt; line-height: 16.853334426879883px; text-align: left;" src="http://matrix.skku.ac.kr/Lab-Book/PIC3CB4.png" border="0" alt="" hspace="0" vspace="0" width="297" height="38" /><span style="font-family: 함초롬바탕; font-size: 8pt; line-height: 16.853334426879883px; text-align: left;">&nbsp;&nbsp;&nbsp;by&nbsp;</span><img style="font-family: 함초롬바탕; font-size: 8pt; line-height: 16.853334426879883px; text-align: left;" src="http://matrix.skku.ac.kr/Lab-Book/PIC3CC5.png" border="0" alt="그림입니다. 원본 그림의 이름: skku.bmp 원본 그림의 크기: 가로 200pixel, 세로 89pixel" hspace="0" vspace="0" width="128" height="57" /></p>
+<p><a href="http://matrix.skku.ac.kr/LA-Lab" target="blank"><font size=4>http://matrix.skku.ac.kr/LA-Lab</font></a></p>
+<p>&nbsp;</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt; text-align: justify; line-height: 21.333332061767578px; font-size: 10pt; font-family: 함초롬바탕; margin-right: 0.2pt;"><span style="font-size: 21pt; font-family: '맑은 고딕'; color: #0000ff; line-height: 44.79999923706055px;">Chapter 1. Vectors</span></p>
+<p style="margin-top: 0pt; margin-bottom: 0pt; text-align: justify; line-height: 21.333332061767578px; font-size: 10pt; font-family: 함초롬바탕;">&nbsp;</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt; text-align: justify; line-height: 21.333332061767578px; font-size: 10pt; font-family: 함초롬바탕;">&nbsp;</p>
+<p><img src="http://matrix.skku.ac.kr/Lab-Book/K-1.png" width="769"></p>
+        
+    </div>
+
+
+
+</span>
+
+
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_1" class="cell_visible">
+    <div id="cell_1" class="cell_evaluated">
+
+        
+        
+        
+            
+                
+            
+            
+                <div class="cell_input_print"><script type="text/code">a=vector([1, 2, -3, 4])   # 벡터 생성, 형식은 vector([성분, 성분, ..., 성분])
+b=vector([-2, 4, 1, 0])
+print "a=", a
+print "b=", b
+print
+print "a+b=", a+b   # 벡터의 합
+print "a-b=", a-b   # 벡터의 차
+print "-2*a=", -2*a   # 벡터의 스칼라배</script></div><br><br><br>
+            
+            
+
+            <div id="introspect_div_1" class="introspection"></div>
+        
+
+        
+        
+
+        
+                
+
+
+    </div>
+</div>
+
+
+    
+<span id="cell_outer_2">
+    
+    <div class="text_cell" id="cell_text_2">
+        
+<p><img src="http://matrix.skku.ac.kr/Lab-Book/K-2.png" width="769"></p>
+        
+    </div>
+
+
+
+</span>
+
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_4" class="cell_visible">
+    <div id="cell_4" class="cell_evaluated">
+
+        
+        
+        
+            
+                
+            
+            
+                <div class="cell_input_print"><script type="text/code">a=vector([2, -1, 3, 2])           
+b=vector([3, 2, 1, -4])
+print a.norm()   # 노름 구하기, 형식은 a.norm()
+print b.norm()   # 노름 구하기
+print (a-b).norm()   # 거리 구하기</script></div><br><br><br>
+            
+            
+
+            <div id="introspect_div_4" class="introspection"></div>
+        
+
+        
+        
+
+        
+                
+
+
+    </div>
+</div>
+
+
+    
+<span id="cell_outer_3">
+    
+    <div class="text_cell" id="cell_text_3">
+        
+<p><img src="http://matrix.skku.ac.kr/Lab-Book/K-3.png" width="769"></p>
+        
+    </div>
+
+
+
+</span>
+
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_6" class="cell_visible">
+    <div id="cell_6" class="cell_evaluated">
+
+        
+        
+        
+            
+                
+            
+            
+                <div class="cell_input_print"><script type="text/code">a=vector([2, -1, 3, 2])           
+b=vector([3, 2, 1, -4])
+print "a=", a
+print "b=", b
+print 
+print a.inner_product(b)   # 내적 구하기, 형식은 a.inner_product(b)</script></div><br><br><br>
+            
+            
+
+            <div id="introspect_div_6" class="introspection"></div>
+        
+
+        
+        
+
+        
+                
+
+
+    </div>
+</div>
+
+
+    
+<span id="cell_outer_5">
+    
+    <div class="text_cell" id="cell_text_5">
+        
+<p><img src="http://matrix.skku.ac.kr/Lab-Book/K-4.png" width="769"></p>
+        
+    </div>
+
+
+
+</span>
+
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_8" class="cell_visible">
+    <div id="cell_8" class="cell_evaluated">
+
+        
+        
+        
+            
+                
+            
+            
+                <div class="cell_input_print"><script type="text/code">x=vector([2, -1, 3])           
+y=vector([4, -1, 2])
+yx=y.inner_product(x)   # 벡터 x와 y의 내적 구하기
+xx=x.inner_product(x)   # 벡터 x와 x의 내적 구하기
+p=yx/xx*x   # 벡터의 정사영 구하기
+w=y-p   # 벡터 x에 수직인 y의 벡터 성분 w 구하기
+print "x=", x
+print "y=", y
+print       
+print "p=", p
+print "w=", w</script></div><br><br><br>
+            
+            
+
+            <div id="introspect_div_8" class="introspection"></div>
+        
+
+        
+        
+
+        
+                
+
+
+    </div>
+</div>
+
+
+    
+<span id="cell_outer_7">
+    
+    <div class="text_cell" id="cell_text_7">
+        
+<p><img src="http://matrix.skku.ac.kr/Lab-Book/K-5.png" width="769"></p>
+        
+    </div>
+
+
+
+</span>
+
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_10" class="cell_visible">
+    <div id="cell_10" class="cell_evaluated">
+
+        
+        
+        
+            
+                
+            
+            
+                <div class="cell_input_print"><script type="text/code">v=vector([3, -1, 2])
+n=vector([1, 3, -2])
+d=-6
+vn=v.inner_product(n)   # 벡터 v와 n의 내적 구하기
+nn=n.norm()   # 벡터 n의 노름 구하기
+Dist=abs(vn+d)/nn   # 점과 평면사이의 거리 구하기
+print "P=", v
+print "n=", n
+print       
+print Dist</script></div>
+            
+            
+
+            <div id="introspect_div_10" class="introspection"></div>
+        
+
+        
+        
+<p><img src="http://matrix.skku.ac.kr/Lab-Book/K-5-1.png" width="769"></p>
+        
+        
+                
+
+
+    </div>
+</div>
+
+
+    
+<span id="cell_outer_9">
+    
+    <div class="text_cell" id="cell_text_9">
+        <p>&nbsp;</p>
+            <p style="margin-top: 0pt; margin-bottom: 0pt; text-align: justify; line-height: 21.333332061767578px; font-size: 10pt; font-family: 함초롬바탕; margin-right: 0.2pt;"><span style="font-size: 21pt; font-family: '맑은 고딕'; color: #0000ff; line-height: 44.79999923706055px;">Chapter 2. System of Linear Equations</span></p>
+<p style="margin-top: 0pt; margin-bottom: 0pt; text-align: justify; line-height: 21.333332061767578px; font-size: 10pt; font-family: 함초롬바탕; margin-right: 0.2pt;"><span style="font-size: 11pt; font-family: '맑은 고딕'; color: #0000ff; line-height: 23.46666717529297px;"><br /></span></p>
+<p style="margin-top: 0pt; margin-bottom: 0pt; text-align: justify; line-height: 21.333332061767578px; font-size: 10pt; font-family: 함초롬바탕; margin-right: 0.2pt;"><span style="font-size: 11pt; font-family: '맑은 고딕'; color: #0000ff; line-height: 23.46666717529297px;"><br /></span></p>
+<p><img src="http://matrix.skku.ac.kr/Lab-Book/K-6.png" width="769"></p>
+        
+    </div>
+
+
+
+</span>
+
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_12" class="cell_visible">
+    <div id="cell_12" class="cell_evaluated">
+
+        
+        
+        
+            
+                
+            
+            
+                <div class="cell_input_print"><script type="text/code">A=matrix(3, 3, [1,1,2,2,4,-3,3,6,-5]) # 3x3 행렬 입력
+b=vector([9,1,0])	# 상수항 벡터 입력
+print A.augment(b) # 첨가행렬</script></div><br><br><br>
+            
+            
+
+            <div id="introspect_div_12" class="introspection"></div>
+        
+
+        
+        
+
+        
+                
+
+
+    </div>
+</div>
+
+
+    
+<span id="cell_outer_11">
+    
+<p><img src="http://matrix.skku.ac.kr/Lab-Book/K-7.png" width="769"></p>        
+
+
+
+
+</span>
+
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_14" class="cell_visible">
+    <div id="cell_14" class="cell_evaluated">
+
+        
+        
+        
+            
+                
+            
+            
+                <div class="cell_input_print"><script type="text/code">A=matrix([[1, 1, 1, 4, 4], [2, 3, 4, 9, 16], [-2, 0, 3, -7, 11]])   # 3x5 행렬 입력
+print "A="
+print A
+print 
+print "RREF(A)="
+print A.rref()   # A의 RREF 구하기</script></div><br><br><br>
+            
+            
+
+            <div id="introspect_div_14" class="introspection"></div>
+        
+
+        
+        
+
+        
+                
+
+
+    </div>
+</div>
+
+
+    
+<span id="cell_outer_13">
+    
+    <div class="text_cell" id="cell_text_13">
+        
+<p><img src="http://matrix.skku.ac.kr/Lab-Book/K-8.png" width="769"></p>        
+    </div>
+
+
+
+</span>
+
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_16" class="cell_visible">
+    <div id="cell_16" class="cell_evaluated">
+
+        
+        
+        
+            
+                
+            
+            
+                <div class="cell_input_print"><script type="text/code">A=matrix([[2, 4, 6], [2, -1, 1], [3, 0, -1]])
+b=vector([18, 8, 3])  
+print "[A: b] ="
+print A.augment(b)
+print 
+print "RREF([A: b]) ="
+print A.augment(b).rref()   # 행렬 A와 벡터 b의 첨가행렬의 RREF 구하기
+print 
+print "x =", A.solve_right(b)   # .solve_right( )를 이용하여 구할 수도 있다.</script></div>
+            
+            
+<p><img src="http://matrix.skku.ac.kr/Lab-Book/K-8-1.png" width="769"></p><br><br>        
+            <div id="introspect_div_16" class="introspection"></div>
+        
+
+        
+        
+
+        
+                
+
+
+    </div>
+</div>
+
+
+    
+<span id="cell_outer_15">
+    
+    <div class="text_cell" id="cell_text_15">
+        
+<p><img src="http://matrix.skku.ac.kr/Lab-Book/K-9.png" width="769"></p>
+        
+    </div>
+
+
+
+</span>
+
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_18" class="cell_visible">
+    <div id="cell_18" class="cell_evaluated">
+
+        
+        
+        
+            
+                
+            
+            
+                <div class="cell_input_print"><script type="text/code">A=matrix([[1, 3, -2, 0, 2, 0], [2, 6, -5, -2, 4, -3], [0, 0, 5, 10, 0, 15], [2, 6, 0, 8, 4, 18]])
+b=vector([0, -1, 5, 6])  
+print "[A: b] ="
+print A.augment(b)
+print 
+print "RREF([A: b]) ="
+print A.augment(b).rref()   # 행렬 A와 벡터 b의 첨가행렬의 RREF 구하기
+print 
+print "x =", A.solve_right(b)   # .solve_right( )를 이용하여 구할 수도 있다.</script></div>
+            
+            <p><img src="http://matrix.skku.ac.kr/Lab-Book/K-9-1.png" width="769"></p><br><br>        
+
+            <div id="introspect_div_18" class="introspection"></div>
+        
+
+        
+        
+
+        
+                
+
+
+    </div>
+</div>
+
+
+    
+<span id="cell_outer_17">
+    
+    <div class="text_cell" id="cell_text_17">
+        <p>&nbsp;</p>
+            <p style="margin-top: 0pt; margin-bottom: 0pt; text-align: justify; line-height: 21.333332061767578px; font-size: 10pt; font-family: 함초롬바탕; margin-right: 0.2pt;"><span style="font-size: 21pt; font-family: '맑은 고딕'; color: #0000ff; line-height: 44.79999923706055px;">Chapter 3. Matrices and Matrix Algebra</span></p>
+<p style="margin-top: 0pt; margin-bottom: 0pt; text-align: justify; line-height: 21.333332061767578px; font-size: 10pt; font-family: 함초롬바탕; margin-right: 0.2pt;"><span style="font-size: 11pt; font-family: '맑은 고딕'; color: #0000ff; line-height: 23.46666717529297px;"><br /></span></p>
+<p><img src="http://matrix.skku.ac.kr/Lab-Book/K-10.png" width="769"></p>
+        
+    </div>
+
+
+
+</span>
+
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_20" class="cell_visible">
+    <div id="cell_20" class="cell_evaluated">
+
+        
+        
+        
+            
+                
+            
+            
+                <div class="cell_input_print"><script type="text/code">A=matrix([[1,2,-4], [-2,1,3]])
+B=matrix([[0,1,4], [-1,3,1]])
+C=matrix([[1,1],[2,2]])
+print "A+B ="
+print A+B   # 행렬의 덧셈
+print 
+print "2*A ="
+print 2*A   # 행렬의 스칼라배
+print
+print "(-1)*C ="
+print (-1)*C   # 행렬의 스칼라배</script></div><br><br><br>
+            
+            
+
+            <div id="introspect_div_20" class="introspection"></div>
+        
+
+        
+        
+
+        
+                
+
+
+    </div>
+</div>
+
+
+    
+<span id="cell_outer_19">
+    
+    <div class="text_cell" id="cell_text_19">
+        
+<p><img src="http://matrix.skku.ac.kr/Lab-Book/K-11.png" width="769"></p>        
+    </div>
+
+
+
+</span>
+
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_22" class="cell_visible">
+    <div id="cell_22" class="cell_evaluated">
+
+        
+        
+        
+            
+                
+            
+            
+                <div class="cell_input_print"><script type="text/code">A=matrix([[1,2,-1], [3,1,0]])
+B=matrix([[-2,1], [0,-3], [2,1]])
+print A*B   # 행렬의 곱(곱하기 기호(*)를 빼먹지 않도록!)</script></div><br><br><br>
+            
+            
+
+            <div id="introspect_div_22" class="introspection"></div>
+        
+
+        
+        
+
+        
+                
+
+
+    </div>
+</div>
+
+
+    
+<span id="cell_outer_21">
+    
+    <div class="text_cell" id="cell_text_21">
+        
+<p><img src="http://matrix.skku.ac.kr/Lab-Book/K-12.png" width="769"></p>        
+    </div>
+
+
+
+</span>
+
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_24" class="cell_visible">
+    <div id="cell_24" class="cell_evaluated">
+
+        
+        
+        
+            
+                
+            
+            
+                <div class="cell_input_print"><script type="text/code">A=matrix([[1,-2,3], [4,5,0]])
+B=matrix([[1,2,-4],[3,-1,2],[0,5,3]])
+C=matrix([[5,4], [-3,2], [2,1]])
+D=matrix([[3,0,1]])
+print "A^T ="
+print A.transpose()   # 행렬의 전치행렬 A.transpose() 구하기
+print
+print "B^T ="
+print B.transpose()</script></div><br><br><br>
+            
+            
+
+            <div id="introspect_div_24" class="introspection"></div>
+        
+
+        
+        
+
+        
+                
+
+
+    </div>
+</div>
+
+
+    
+<span id="cell_outer_23">
+    
+    <div class="text_cell" id="cell_text_23">
+        
+<p><img src="http://matrix.skku.ac.kr/Lab-Book/K-13.png" width="769"></p>
+        
+    </div>
+
+
+
+</span>
+
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_28" class="cell_visible">
+    <div id="cell_28" class="cell_evaluated">
+
+        
+        
+        
+            
+                
+            
+            
+                <div class="cell_input_print"><script type="text/code">A=matrix([[1, 4, 3], [2, 5, 6], [0, 0, 0]])
+A.is_invertible()   # 행렬이 가역인지 확인 A.is_invertible()</script></div>
+            
+            
+<p><img src="http://matrix.skku.ac.kr/Lab-Book/K-13-1.png" width="769"></p><br><br>
+            <div id="introspect_div_28" class="introspection"></div>
+        
+
+        
+        
+
+        
+                
+
+
+    </div>
+</div>
+
+
+    
+<span id="cell_outer_25">
+    
+    <div class="text_cell" id="cell_text_25">
+        
+<p><img src="http://matrix.skku.ac.kr/Lab-Book/K-14.png" width="769"></p>        
+    </div>
+
+
+
+</span>
+
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_26" class="cell_visible">
+    <div id="cell_26" class="cell_evaluated">
+
+        
+        
+        
+            
+                
+            
+            
+                <div class="cell_input_print"><script type="text/code">A=matrix(2, 2, [3, 5, 1, 2])
+print "A ="
+print A
+print
+print "inverse of A ="
+print A.inverse()   # AB의 역행렬 구하기, 형식은 A.inverse()</script></div><br><br><br>
+            
+            
+
+            <div id="introspect_div_26" class="introspection"></div>
+        
+
+        
+        
+
+        
+                
+
+
+    </div>
+</div>
+
+
+    
+<span id="cell_outer_27">
+    
+    <div class="text_cell" id="cell_text_27">
+        
+<p><img src="http://matrix.skku.ac.kr/Lab-Book/K-15.png" width="769"></p>
+        
+    </div>
+
+
+
+</span>
+
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_30" class="cell_visible">
+    <div id="cell_30" class="cell_evaluated">
+
+        
+        
+        
+            
+                
+            
+            
+                <div class="cell_input_print"><script type="text/code">#elementary_matrix=matrix([[1,0,0,0], [0,1,0,0],[0,0,1,0],[0,0,0,1]])
+E1=elementary_matrix(4, row1=1, row2=2)   
+E2=elementary_matrix(4, row1=2, scale=-3)  
+E3=elementary_matrix(4, row1=0, row2=3, scale=7)  
+print "E1 ="
+print E1
+print
+print "E2 ="
+print E2
+print
+print "E3 ="
+print E3</script></div><br><br><br>
+            
+            
+
+            <div id="introspect_div_30" class="introspection"></div>
+        
+
+        
+        
+
+        
+                
+
+
+    </div>
+</div>
+
+
+    
+<span id="cell_outer_29">
+    
+    <div class="text_cell" id="cell_text_29">
+        
+<p><img src="http://matrix.skku.ac.kr/Lab-Book/K-16.png" width="769"></p>
+        
+    </div>
+
+
+
+</span>
+
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_32" class="cell_visible">
+    <div id="cell_32" class="cell_evaluated">
+
+        
+        
+        
+            
+                
+            
+            
+                <div class="cell_input_print"><script type="text/code">A=matrix([[1, -1, 2], [-1, 0, 2], [-6, 4, 11]])
+I=identity_matrix(3)
+print "A ="
+print A
+print
+AI=A.augment(I).rref()   # 첨가행렬 [A: I] 의 RREF 구하기
+print "RREF[A: I] ="
+print AI
+print
+A2=AI.submatrix(0, 3, 3, 3)   # A.submatrix(a, b, c, d)
+# 행렬의 (a+1, b+1) 성분부터 c개의 행, d개의 열로 이루어진 부분행렬 구하기
+print "inverse of A ="
+print A2</script></div><br><br><br>
+            
+            
+
+            <div id="introspect_div_32" class="introspection"></div>
+        
+
+        
+        
+
+        
+                
+
+
+    </div>
+</div>
+
+
+    
+<span id="cell_outer_31">
+    
+    <div class="text_cell" id="cell_text_31">
+        
+<p><img src="http://matrix.skku.ac.kr/Lab-Book/K-17.png" width="769"></p>        
+    </div>
+
+
+
+</span>
+
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_34" class="cell_visible">
+    <div id="cell_34" class="cell_evaluated">
+
+        
+        
+        
+            
+                
+            
+            
+                <div class="cell_input_print"><script type="text/code">A=matrix(3, 3, [1, 2, 3, 2, 5, 3, 1, 0, 8])
+b=vector([1, 3, -1])
+print "x=", A.inverse()*b   # 역행렬을 이용한 연립방정식의 해 구하기
+print
+print "x=", A.solve_right(b)   # .solve_right( )를 이용하여 구할 수도 있다.</script></div>
+            
+            <p><img src="http://matrix.skku.ac.kr/Lab-Book/K-17-1.png" width="769"></p>        <br><br>
+
+            <div id="introspect_div_34" class="introspection"></div>
+        
+
+        
+        
+
+        
+                
+
+
+    </div>
+</div>
+
+
+    
+<span id="cell_outer_33">
+    
+    <div class="text_cell" id="cell_text_33">
+        
+<p><img src="http://matrix.skku.ac.kr/Lab-Book/K-18.png" width="769"></p>        
+    </div>
+
+
+
+</span>
+
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_36" class="cell_visible">
+    <div id="cell_36" class="cell_evaluated">
+
+        
+        
+        
+            
+                
+            
+            
+                <div class="cell_input_print"><script type="text/code">H=diagonal_matrix([-3, -2, 1])   # 대각선행렬: diagonal_matrix([d1, d2, d3])
+K=identity_matrix(3)   # 단위행렬: identity_matrix(n)
+J=matrix(2, 2, 0)   # 영행렬: matrix(m, n, 0)
+print "H="; print H
+print
+print "K="; print K
+print
+print "J="; print J</script></div><br><br><br>
+            
+            
+
+            <div id="introspect_div_36" class="introspection"></div>
+        
+
+        
+        
+
+        
+                
+
+
+    </div>
+</div>
+
+
+    
+<span id="cell_outer_35">
+    
+    <div class="text_cell" id="cell_text_35">
+        
+<p><img src="http://matrix.skku.ac.kr/Lab-Book/K-19.png" width="769"></p>
+    </div>
+
+
+
+</span>
+
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_39" class="cell_visible">
+    <div id="cell_39" class="cell_evaluated">
+
+        
+        
+        
+            
+                
+            
+            
+                <div class="cell_input_print"><script type="text/code">A=matrix([[1, 2, 3], [2, 4, 5], [3, 5, 6]])
+B=matrix([[0, 1, -2], [-1, 0, 3], [2, -3, 0]])
+print bool( A==A.transpose() )   # A가 대칭인지 확인
+print bool( B==-B.transpose() )   # B가 반대칭인지 확인</script></div>
+            
+            <p><img src="http://matrix.skku.ac.kr/Lab-Book/K-19-1.png" width="769"></p><br><br>
+
+            <div id="introspect_div_39" class="introspection"></div>
+        
+
+        
+        
+
+        
+                
+
+
+    </div>
+</div>
+
+
+    
+<span id="cell_outer_37">
+    
+    <div class="text_cell" id="cell_text_37">
+        <p>&nbsp;</p>
+            <p style="margin-top: 0pt; margin-bottom: 0pt; text-align: justify; line-height: 21.333332061767578px; font-size: 10pt; font-family: 함초롬바탕; margin-right: 0.2pt;"><span style="font-size: 21pt; font-family: '맑은 고딕'; color: #0000ff; line-height: 44.79999923706055px;">Chapter 4. Determinants</span></p>
+<p style="margin-top: 0pt; margin-bottom: 0pt; text-align: justify; line-height: 21.333332061767578px; font-size: 10pt; font-family: 함초롬바탕; margin-right: 0.2pt;"><span style="font-size: 11pt; font-family: '맑은 고딕'; color: #0000ff; line-height: 23.46666717529297px;"><br /></span></p>
+<p style="margin-top: 0pt; margin-bottom: 0pt; text-align: justify; line-height: 21.333332061767578px; font-size: 10pt; font-family: 함초롬바탕; margin-right: 0.2pt;"><span style="font-size: 11pt; font-family: '맑은 고딕'; color: #0000ff; line-height: 23.46666717529297px;"><br /></span></p>
+<p><img src="http://matrix.skku.ac.kr/Lab-Book/K-20.png" width="769"></p>        
+    </div>
+
+
+
+</span>
+
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_38" class="cell_visible">
+    <div id="cell_38" class="cell_evaluated">
+
+        
+        
+        
+            
+                
+            
+            
+                <div class="cell_input_print"><script type="text/code">Permutation([5,1,2,4,3]).inversions()   # 에서 반전이 일어난 부분 찾기</script></div><br><br><br>
+            
+            
+
+            <div id="introspect_div_38" class="introspection"></div>
+        
+
+        
+        
+
+        
+                
+
+
+    </div>
+</div>
+
+
+    
+<span id="cell_outer_40">
+    
+    <div class="text_cell" id="cell_text_40">
+        
+
+        
+    </div>
+
+
+
+</span>
+
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_42" class="cell_visible">
+    <div id="cell_42" class="cell_evaluated">
+
+        
+        
+        
+            
+                
+            
+            
+                <div class="cell_input_print"><script type="text/code">Permutation([5,1,2,4,3]).number_of_inversions()   # 반전의 개수 구하기</script></div><br><br><br>
+            
+            
+
+            <div id="introspect_div_42" class="introspection"></div>
+        
+
+        
+        
+
+        
+                
+
+
+    </div>
+</div>
+
+
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_44" class="cell_visible">
+    <div id="cell_44" class="cell_evaluated">
+
+        
+        
+        
+            
+                
+            
+            
+                <div class="cell_input_print"><script type="text/code">Permutation([5,1,2,4,3]).is_even()   # 짝치환인지 확인</script></div>
+            
+            <p><img src="http://matrix.skku.ac.kr/Lab-Book/K-20-1.png" width="769"></p>            <br><br>
+
+            <div id="introspect_div_44" class="introspection"></div>
+        
+
+        
+        
+
+        
+                
+
+
+    </div>
+</div>
+
+
+    
+<span id="cell_outer_41">
+    
+    <div class="text_cell" id="cell_text_41">
+        
+<p><img src="http://matrix.skku.ac.kr/Lab-Book/K-21.png" width="769"></p>        
+        
+    </div>
+
+
+
+</span>
+
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_45" class="cell_visible">
+    <div id="cell_45" class="cell_evaluated">
+
+        
+        
+        
+            
+                
+            
+            
+                <div class="cell_input_print"><script type="text/code">B=matrix([[1, 2, 3], [-4, 5, 6], [7, -8, 9]])
+print B.det()   # 행렬식 구하기</script></div><br><br><br>
+            
+            
+
+            <div id="introspect_div_45" class="introspection"></div>
+        
+
+        
+        
+
+        
+                
+
+
+    </div>
+</div>
+
+
+    
+<span id="cell_outer_43">
+    
+    <div class="text_cell" id="cell_text_43">
+        
+<p><img src="http://matrix.skku.ac.kr/Lab-Book/K-22.png" width="769"></p>
+        
+    </div>
+
+
+
+</span>
+
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_48" class="cell_visible">
+    <div id="cell_48" class="cell_evaluated">
+
+        
+        
+        
+            
+                
+            
+            
+                <div class="cell_input_print"><script type="text/code">A=matrix([[3, -2, 1], [5, 6, 2], [1, 0, -3]])
+print A.adjoint()   # 수반행렬 구하기</script></div><br><br><br>
+            
+            
+
+            <div id="introspect_div_48" class="introspection"></div>
+        
+
+        
+        
+
+        
+                
+
+
+    </div>
+</div>
+
+
+    
+<span id="cell_outer_46">
+    
+    <div class="text_cell" id="cell_text_46">
+        
+<p><img src="http://matrix.skku.ac.kr/Lab-Book/K-23.png" width="769"></p>
+        
+    </div>
+
+
+
+</span>
+
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_50" class="cell_visible">
+    <div id="cell_50" class="cell_evaluated">
+
+        
+        
+        
+            
+                
+            
+            
+                <div class="cell_input_print"><script type="text/code">A=matrix([[3, -2, 1], [5, 6, 2], [1, 0, -3]])
+dA=A.det()   # 행렬식 구하기
+adjA=A.adjoint()   # 수반행렬 구하기
+print "inverse of A = (1/dA)*adjA ="
+print (1/dA)*adjA   # 수반행렬을 이용한 역행렬 구하기</script></div><br><br><br>
+            
+            
+
+            <div id="introspect_div_50" class="introspection"></div>
+        
+
+        
+        
+
+        
+                
+
+
+    </div>
+</div>
+
+
+    
+<span id="cell_outer_47">
+    
+    <div class="text_cell" id="cell_text_47">
+        
+<p><img src="http://matrix.skku.ac.kr/Lab-Book/K-24.png" width="769"></p>
+        
+    </div>
+
+
+
+</span>
+
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_52" class="cell_visible">
+    <div id="cell_52" class="cell_evaluated">
+
+        
+        
+        
+            
+                
+            
+            
+                <div class="cell_input_print"><script type="text/code">A=matrix([[1, 2, 2], [1, 2, -1], [3, -3, 0]])
+print A.charpoly()   # A의 특성다항식 구하기</script></div><br><br><br>
+            
+            
+
+            <div id="introspect_div_52" class="introspection"></div>
+        
+
+        
+        
+
+        
+                
+
+
+    </div>
+</div>
+
+
+    
+<span id="cell_outer_49">
+    
+    <div class="text_cell" id="cell_text_49">
+        
+<p><img src="http://matrix.skku.ac.kr/Lab-Book/K-25.png" width="769"></p>
+        
+    </div>
+
+
+
+</span>
+
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_55" class="cell_visible">
+    <div id="cell_55" class="cell_evaluated">
+
+        
+        
+        
+            
+                
+            
+            
+                <div class="cell_input_print"><script type="text/code">A=matrix([[1, 2, 2], [1, 2, -1], [3, -3, 0]])
+print A.eigenvalues()   # A의 고유값 구하기</script></div><br><br><br>
+            
+            
+
+            <div id="introspect_div_55" class="introspection"></div>
+        
+
+        
+        
+
+        
+                
+
+
+    </div>
+</div>
+
+
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_59" class="cell_visible">
+    <div id="cell_59" class="cell_evaluated">
+
+        
+        
+        
+            
+                
+            
+            
+                <div class="cell_input_print"><script type="text/code">A=matrix([[1, 2, 2], [1, 2, -1], [3, -3, 0]])
+print A.eigenvectors_right()   # A의 고유벡터 구하기: (고유값, [고유벡터], 중복도)</script></div>
+            
+<p><img src="http://matrix.skku.ac.kr/Lab-Book/K-25-1.png" width="769"></p>            <br><br>
+
+            <div id="introspect_div_59" class="introspection"></div>
+        
+
+        
+        
+
+        
+                
+
+
+    </div>
+</div>
+
+
+    
+<span id="cell_outer_51">
+    
+    <div class="text_cell" id="cell_text_51">
+        
+<p>&nbsp;</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt; text-align: justify; line-height: 21.333332061767578px; font-size: 10pt; font-family: 함초롬바탕; margin-right: 0.2pt;"><span style="font-size: 21pt; font-family: '맑은 고딕'; color: #0000ff; line-height: 44.79999923706055px;">Chapter 6. Linear Transformations</span></p>
+<p style="margin-top: 0pt; margin-bottom: 0pt; text-align: justify; line-height: 21.333332061767578px; font-size: 10pt; font-family: 함초롬바탕; margin-right: 0.2pt;"><span style="font-family: '맑은 고딕';"><br /></span></p>
+<p style="margin: 0pt 0.2pt 0pt 0pt; text-align: justify; line-height: 21.333332061767578px; font-size: 10pt; font-family: 함초롬바탕;"><span style="font-family: '맑은 고딕'; color: #ff00ff;"><br /></span></p>
+<p><img src="http://matrix.skku.ac.kr/Lab-Book/K-26.png" width="769"></p>
+        
+    </div>
+
+
+
+</span>
+
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_84" class="cell_visible">
+    <div id="cell_84" class="cell_evaluated">
+
+        
+        
+        
+            
+                
+            
+            
+                <div class="cell_input_print"><script type="text/code">
+var('x, y, z')
+h(x, y, z)=[x+2*y, -x-y, z, x+z]   # 함수의 정의
+T=linear_transformation(QQ^3, QQ^4, h)   # 선형변환 정의, 여기서 스칼라는 유리수
+A=T.matrix(side='right')  # 선형변환의 표준행렬을 구하는 Sage 명령어
+print "A ="
+A
+				</script></div><br><br><br>
+            
+            
+
+            <div id="introspect_div_84" class="introspection"></div>
+        
+
+        
+        
+
+        
+                
+
+
+    </div>
+</div>
+
+
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_57" class="cell_visible">
+    <div id="cell_57" class="cell_evaluated">
+
+        
+        
+        
+            
+                
+            
+            
+                <div class="cell_input_print"><script type="text/code">
+var('x, y, z')
+h(x, y, z)=[x+2*y, -x-y, z, x+z]   # 함수의 정의
+T=linear_transformation(QQ^3, QQ^4, h)   # 선형변환 정의, 여기서 스칼라는 유리수
+A=T.matrix(side='right')  # 선형변환의 표준행렬을 구하는 Sage 명령어
+e1=vector([1, 0, 0])   #  단위벡터 생성
+print "e1="
+print e1
+print "T(e1) =", T(e1)   # 벡터 e1 에 대한 image 구하기
+
+e2=vector([0, 1, 0])   #  단위벡터 생성
+print "e2="
+print e2
+print "T(e2) =", T(e2)   # 벡터 e2 에 대한 image 구하기
+
+e3=vector([0, 0, 1])   #  단위벡터 생성
+print "e3="
+print e3
+print "T(e3) =", T(e3)   # 벡터 e3 에 대한 image 구하기
+x0=vector([2, -3, 3])
+
+         # A= column_matrix([T(e1), T(e2), T(e3)]) = T 의 표준행렬
+
+print "A = [T]= = column_matrix([T(e1), T(e2), T(e3)])="
+print A
+print                                    
+
+</script></div><br><br><br>
+            
+            
+
+            <div id="introspect_div_57" class="introspection"></div>
+        
+
+        
+        
+
+        
+                
+
+
+    </div>
+</div>
+
+
+    
+<span id="cell_outer_53">
+    
+    <div class="text_cell" id="cell_text_53">
+        
+<p><img src="http://matrix.skku.ac.kr/Lab-Book/K-27.png" width="769"></p>                
+    </div>
+
+
+
+</span>
+
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_61" class="cell_visible">
+    <div id="cell_61" class="cell_evaluated">
+
+        
+        
+        
+            
+                
+            
+            
+                <div class="cell_input_print"><script type="text/code">var('x, y, z')
+h(x, y, z)=[x+2*y, -x-y, z, x+z]   # 함수의 정의
+T=linear_transformation(QQ^3, QQ^4, h)   # 선형변환 정의, 여기서 스칼라는 유리수
+A=T.matrix(side='right')  # 선형변환의 표준행렬을 구하는 Sage 명령어
+x0=vector([2, -3, 3])
+print "A ="
+print A
+print                                    
+print "T(x0) =", T(x0)   # 벡터 x0에 대한 image 구하기
+print "A*x0 =", A*x0   # 표준행렬과 벡터의 곱 구하기</script></div><br><br><br>
+            
+            
+
+            <div id="introspect_div_61" class="introspection"></div>
+        
+
+        
+        
+
+        
+                
+
+
+    </div>
+</div>
+
+
+    
+<span id="cell_outer_54">
+    
+    <div class="text_cell" id="cell_text_54">
+        
+<p><img src="http://matrix.skku.ac.kr/Lab-Book/K-28.png" width="769"></p>
+        
+    </div>
+
+
+
+</span>
+
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_64" class="cell_visible">
+    <div id="cell_64" class="cell_evaluated">
+
+        
+        
+        
+            
+                
+            
+            
+                <div class="cell_input_print"><script type="text/code">var('x, y, z')
+U = QQ^3   # 벡터공간 정의
+h(x, y, z) = [x+2*y-z, y+z, x+y-2*z]   # 선형변환 함수 정의
+T = linear_transformation(U, U, h)   # 선형변환 생성
+print T</script></div><br><br><br>
+            
+            
+
+            <div id="introspect_div_64" class="introspection"></div>
+        
+
+        
+        
+
+        
+                
+
+
+    </div>
+</div>
+
+
+    
+<span id="cell_outer_56">
+    
+    <div class="text_cell" id="cell_text_56">
+        
+        
+    </div>
+
+
+
+</span>
+
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_67" class="cell_visible">
+    <div id="cell_67" class="cell_evaluated">
+
+        
+        
+        
+            
+                
+            
+            
+                <div class="cell_input_print"><script type="text/code">TK = T.kernel()   # kernel을 구하기
+print TK</script></div>
+            
+            <p><img src="http://matrix.skku.ac.kr/Lab-Book/K-28-1.png" width="769"></p>            <br><br>
+
+            <div id="introspect_div_67" class="introspection"></div>
+        
+
+        
+        
+
+        
+                
+
+
+    </div>
+</div>
+
+
+    
+<span id="cell_outer_58">
+    
+    <div class="text_cell" id="cell_text_58">
+        
+        
+    </div>
+
+
+
+</span>
+
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_69" class="cell_visible">
+    <div id="cell_69" class="cell_evaluated">
+
+        
+        
+        
+            
+                
+            
+            
+                <div class="cell_input_print"><script type="text/code">print "T is injective?", T.is_injective()   # 단사인지 확인</script></div><br><br><br>
+            
+            
+
+            <div id="introspect_div_69" class="introspection"></div>
+        
+
+        
+        
+
+        
+                
+
+
+    </div>
+</div>
+
+
+    
+<span id="cell_outer_60">
+    
+    <div class="text_cell" id="cell_text_60">
+        
+<p><img src="http://matrix.skku.ac.kr/Lab-Book/K-29.png" width="769"></p>        
+    </div>
+
+
+
+</span>
+
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_71" class="cell_visible">
+    <div id="cell_71" class="cell_evaluated">
+
+        
+        
+        
+            
+                
+            
+            
+                <div class="cell_input_print"><script type="text/code">U = QQ^2   # 벡터공간 정의
+V = QQ^3   # 벡터공간 정의
+A = matrix(QQ, [[1, 0], [0, 1], [0, 0]])   # 변환행렬 정의
+TA = linear_transformation(U, V, A, side='right')   # 선형변환 정의
+print TA</script></div><br><br><br>
+            
+            
+
+            <div id="introspect_div_71" class="introspection"></div>
+        
+
+        
+        
+
+        
+                
+
+
+    </div>
+</div>
+
+
+    
+<span id="cell_outer_62">
+    
+    <div class="text_cell" id="cell_text_62">
+        
+
+        
+    </div>
+
+
+
+</span>
+
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_74" class="cell_visible">
+    <div id="cell_74" class="cell_evaluated">
+
+        
+        
+        
+            
+                
+            
+            
+                <div class="cell_input_print"><script type="text/code">print TA.kernel()   # kernel 구하기
+print
+print "TA is injective?", TA.is_injective()   # 단사인지 확인</script></div>
+            
+			<p><img src="http://matrix.skku.ac.kr/Lab-Book/K-29-1.png" width="769"></p>            <br><br>
+            
+
+            <div id="introspect_div_74" class="introspection"></div>
+        
+
+        
+        
+
+        
+                
+
+
+    </div>
+</div>
+
+
+    
+<span id="cell_outer_63">
+    
+    <div class="text_cell" id="cell_text_63">
+        
+        
+    </div>
+
+
+
+</span>
+
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_76" class="cell_visible">
+    <div id="cell_76" class="cell_evaluated">
+
+        
+        
+        
+            
+                
+            
+            
+                <div class="cell_input_print"><script type="text/code">print TA.image()   # 치역 구하기
+print
+print "TA is surjective ?", TA.is_surjective()   # 전사인지 확인</script></div><br><br><br>
+            
+            
+
+            <div id="introspect_div_76" class="introspection"></div>
+        
+
+        
+        
+
+        
+                
+
+
+    </div>
+</div>
+
+
+    
+<span id="cell_outer_65">
+    
+    <div class="text_cell" id="cell_text_65">
+        
+<p><img src="http://matrix.skku.ac.kr/Lab-Book/K-30.png" width="769"></p>        
+    </div>
+
+
+
+</span>
+
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_78" class="cell_visible">
+    <div id="cell_78" class="cell_evaluated">
+
+        
+        
+        
+            
+                
+            
+            
+                <div class="cell_input_print"><script type="text/code">A=matrix([[3/5, -4/5], [4/5, 3/5]])
+B=matrix([[1/sqrt(3), 1/sqrt(2), 1/sqrt(6)],
+          [1/sqrt(3), -1/sqrt(2), 1/sqrt(6)],
+          [1/sqrt(3), 0, -2/sqrt(6)]])
+print "AT*A ="
+print A.transpose()*A   # 직교행렬인지 확인
+print
+print "BT*B ="
+print B.transpose()*B   # 직교행렬인지 확인</script></div>
+            
+            
+<p><img src="http://matrix.skku.ac.kr/Lab-Book/K-30-1.png" width="769"></p>            <br><br>
+            <div id="introspect_div_78" class="introspection"></div>
+        
+
+        
+        
+
+        
+                
+
+
+    </div>
+</div>
+
+
+    
+<span id="cell_outer_66">
+    
+    <div class="text_cell" id="cell_text_66">
+        
+<p><img src="http://matrix.skku.ac.kr/Lab-Book/K-31.png" width="769"></p>                
+    </div>
+
+
+
+</span>
+
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_81" class="cell_visible">
+    <div id="cell_81" class="cell_evaluated">
+
+        
+        
+        
+            
+                
+            
+            
+                <div class="cell_input_print"><script type="text/code">def matrix_transformation(A, L):
+    n=matrix(L).nrows()    # list L의 성분의 갯수
+    L2=[[0,0] for i in range(n)]   # 새로운 list L2 정의
+    for i in range(n):
+        L2[i]=list(A*vector(L[i]))  # L2=A*L
+    return L2   # L2 내보내기
+print "The matrix_transformation function is activated"   # 적용되었는지 확인</script></div><br><br><br>
+            
+            
+
+            <div id="introspect_div_81" class="introspection"></div>
+        
+
+        
+        
+
+        
+                
+
+
+    </div>
+</div>
+
+
+    
+<span id="cell_outer_68">
+    
+    <div class="text_cell" id="cell_text_68">
+        
+<p><img src="http://matrix.skku.ac.kr/Lab-Book/K-31-1.png" width="769"></p>                    
+    </div>
+
+
+
+</span>
+
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_83" class="cell_visible">
+    <div id="cell_83" class="cell_evaluated">
+
+        
+        
+        
+            
+                
+            
+            
+                <div class="cell_input_print"><script type="text/code">A=matrix([[2,0], [0,2]])   # 주어진 이미지를 2배로 확대시키는 행렬
+B=matrix([[1,1], [0,1]])   # 주어진 이미지를 축으로 1배만큼 층밀림시키는 행렬
+C=matrix([[cos(pi/3), -sin(pi/3)], [sin(pi/3), cos(pi/3)]])    # 주어진 이미지를 반시계방향으로 pi/3만큼 회전시키는 행렬</script></div><br><br><br>
+            
+            
+
+            <div id="introspect_div_83" class="introspection"></div>
+        
+
+        
+        
+
+        
+                
+
+
+    </div>
+</div>
+
+
+    
+<span id="cell_outer_70">
+    
+    <div class="text_cell" id="cell_text_70">
+        
+<p><img src="http://matrix.skku.ac.kr/Lab-Book/K-31-2.png" width="769"></p>                            
+    </div>
+
+
+
+</span>
+
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_86" class="cell_visible">
+    <div id="cell_86" class="cell_evaluated">
+
+        
+        
+        
+            
+                
+            
+            
+                <div class="cell_input_print"><script type="text/code">L1=list( [ [0,0], [0,3], [3,0] ])   # 세 점을 입력
+SL1=polygon(L1, alpha=0.3, rgbcolor=(1,0,0))   # 위 세 점을 지나는 도형 그리기
+SL1.show(aspect_ratio=1, figsize=3)</script></div><br><br><br>
+            
+            
+
+            <div id="introspect_div_86" class="introspection"></div>
+        
+
+        
+        
+
+        
+                
+
+
+    </div>
+</div>
+
+
+    
+<span id="cell_outer_72">
+    
+    <div class="text_cell" id="cell_text_72">
+        
+<p><img src="http://matrix.skku.ac.kr/Lab-Book/K-31-3.png" width="769"></p>                    
+        
+    </div>
+
+
+
+</span>
+
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_88" class="cell_visible">
+    <div id="cell_88" class="cell_evaluated">
+
+        
+        
+        
+            
+                
+            
+            
+                <div class="cell_input_print"><script type="text/code">L2=matrix_transformation(A, L1)   # 선형변환을 이용한 새로운 세 점 계산
+SL2=polygon(L2, alpha=0.2, rgbcolor=(0,0,1))  # 위 세 점을 지나는 도형 그리기
+SL2.show(aspect_ratio=1, figsize=3)</script></div><br><br><br>
+            
+            
+
+            <div id="introspect_div_88" class="introspection"></div>
+        
+
+        
+        
+
+        
+                
+
+
+    </div>
+</div>
+
+
+    
+<span id="cell_outer_73">
+    
+    <div class="text_cell" id="cell_text_73">
+        
+<p><img src="http://matrix.skku.ac.kr/Lab-Book/K-31-4.png" width="769"></p>                    
+</td>
+</tr>
+</tbody>
+</table>
+        
+    </div>
+
+
+
+</span>
+
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_90" class="cell_visible">
+    <div id="cell_90" class="cell_evaluated">
+
+        
+        
+        
+            
+                
+            
+            
+                <div class="cell_input_print"><script type="text/code">L3=matrix_transformation(B, L1)   # 선형변환을 이용한 새로운 세 점 계산
+SL3=polygon(L3, alpha=0.8, rgbcolor=(1,0,1))   # 위 세 점을 지나는 도형 그리기
+SL3.show(aspect_ratio=1, figsize=3)</script></div><br><br><br>
+            
+            
+
+            <div id="introspect_div_90" class="introspection"></div>
+        
+
+        
+        
+
+        
+                
+
+
+    </div>
+</div>
+
+
+    
+<span id="cell_outer_75">
+    
+    <div class="text_cell" id="cell_text_75">
+        
+<p><img src="http://matrix.skku.ac.kr/Lab-Book/K-31-5.png" width="769"></p>                            
+    </div>
+
+
+
+</span>
+
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_93" class="cell_visible">
+    <div id="cell_93" class="cell_evaluated">
+
+        
+        
+        
+            
+                
+            
+            
+                <div class="cell_input_print"><script type="text/code">L4=matrix_transformation(C, L1)   # 선형변환을 이용한 새로운 세 점 계산
+SL4=polygon(L4, alpha=0.4, rgbcolor=(0,0,1))   # 위 세 점을 지나는 도형 그리기
+SL4.show(aspect_ratio=1, figsize=3)</script></div><br><br><br>
+            
+            
+
+            <div id="introspect_div_93" class="introspection"></div>
+        
+
+        
+        
+
+        
+                
+
+
+    </div>
+</div>
+
+
+    
+<span id="cell_outer_77">
+    
+    <div class="text_cell" id="cell_text_77">
+        
+<p><img src="http://matrix.skku.ac.kr/Lab-Book/K-31-6.png" width="769"></p>                    
+        
+    </div>
+
+
+
+</span>
+
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_92" class="cell_visible">
+    <div id="cell_92" class="cell_evaluated">
+
+        
+        
+        
+            
+                
+            
+            
+                <div class="cell_input_print"><script type="text/code">(SL1+SL2+SL3+SL4).show(aspect_ratio=1, figsize=3)</script></div><br><br><br>
+            
+            
+
+            <div id="introspect_div_92" class="introspection"></div>
+        
+
+        
+        
+
+        
+                
+
+
+    </div>
+</div>
+
+
+    
+<span id="cell_outer_79">
+    
+    <div class="text_cell" id="cell_text_79">
+        
+<p><img src="http://matrix.skku.ac.kr/Lab-Book/K-32.png" width="769"></p>
+    </div>
+
+
+
+</span>
+
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_96" class="cell_visible">
+    <div id="cell_96" class="cell_evaluated">
+
+        
+        
+        
+            
+                
+            
+            
+                <div class="cell_input_print"><script type="text/code">def matrix_transformation(A, L):
+    n=matrix(L).nrows()    # list L의 성분의 갯수
+    L2=[[0,0] for i in range(n)]   # 새로운 list L2 정의
+    for i in range(n):
+        L2[i]=list(A*vector(L[i]))  # L2=A*L
+    return L2   # L2 내보내기
+print "The matrix_transformation function is activated"   # 적용되었는지 확인</script></div><br><br><br>
+            
+            
+
+            <div id="introspect_div_96" class="introspection"></div>
+        
+
+        
+        
+
+        
+                
+
+
+    </div>
+</div>
+
+
+    
+<span id="cell_outer_80">
+    
+    <div class="text_cell" id="cell_text_80">
+        
+<p><img src="http://matrix.skku.ac.kr/Lab-Book/K-32-1.png" width="769"></p>
+        
+    </div>
+
+
+
+</span>
+
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_98" class="cell_visible">
+    <div id="cell_98" class="cell_evaluated">
+
+        
+        
+        
+            
+                
+            
+            
+                <div class="cell_input_print"><script type="text/code">A=matrix([[2,0], [0,2]])   # 주어진 이미지를 2배로 확대시키는 행렬
+B=matrix([[1,1], [0,1]])   # 주어진 이미지를 축으로 1배만큼 층밀림시키는 행렬
+C=matrix([[cos(pi/3), -sin(pi/3)], [sin(pi/3), cos(pi/3)]])    # 주어진 이미지를 반시계방향으로 pi/3만큼 회전시키는 행렬
+print (A, B, C)</script></div><br><br><br>
+            
+            
+
+            <div id="introspect_div_98" class="introspection"></div>
+        
+
+        
+        
+
+        
+                
+
+
+    </div>
+</div>
+
+
+    
+<span id="cell_outer_82">
+    
+    <div class="text_cell" id="cell_text_82">
+        
+<p><img src="http://matrix.skku.ac.kr/Lab-Book/K-32-2.png" width="769"></p>        
+    </div>
+
+
+
+</span>
+
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_101" class="cell_visible">
+    <div id="cell_101" class="cell_evaluated">
+
+        
+        
+        
+            
+                
+            
+            
+                <div class="cell_input_print"><script type="text/code">L1=list( [ [0,0], [4,4], [-3,12], [0,15], [3,12], [4,12], [0,16], [-4,12], [3,4], [0,1], [-3,4], [-4,4], [0,0] ])   # 알파벳 를 구성하는 점들 입력
+SL1=line(L1, color="red")   # 위 점들을 지나는 도형 그리기
+SL1.show(aspect_ratio=1, figsize=5)</script></div><br><br><br>
+            
+            
+
+            <div id="introspect_div_101" class="introspection"></div>
+        
+
+        
+        
+
+        
+                
+
+
+    </div>
+</div>
+
+
+    
+<span id="cell_outer_85">
+    
+    <div class="text_cell" id="cell_text_85">
+        
+<p><img src="http://matrix.skku.ac.kr/Lab-Book/K-32-3.png" width="769"></p>
+        
+    </div>
+
+
+
+</span>
+
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_103" class="cell_visible">
+    <div id="cell_103" class="cell_evaluated">
+
+        
+        
+        
+            
+                
+            
+            
+                <div class="cell_input_print"><script type="text/code">L2=matrix_transformation(A, L1)  # 선형변환을 이용한 새로운 점들의 좌표 계산
+SL2=line(L2, color="purple")  # 위 점들을 지나는 도형 그리기
+SL2.show(aspect_ratio=1, figsize=5)</script></div><br><br><br>
+            
+            
+
+            <div id="introspect_div_103" class="introspection"></div>
+        
+
+        
+        
+
+        
+                
+
+
+    </div>
+</div>
+
+
+    
+<span id="cell_outer_87">
+    
+    <div class="text_cell" id="cell_text_87">
+        
+<p><img src="http://matrix.skku.ac.kr/Lab-Book/K-32-4.png" width="769"></p>        
+    </div>
+
+
+
+</span>
+
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_105" class="cell_visible">
+    <div id="cell_105" class="cell_evaluated">
+
+        
+        
+        
+            
+                
+            
+            
+                <div class="cell_input_print"><script type="text/code">L3=matrix_transformation(B, L1)   # 선형변환을 이용한 새로운 점들의 좌표 계산
+SL3=line(L3, color="blue")   # 위 점들을 지나는 도형 그리기
+SL3.show(aspect_ratio=1, figsize=5)</script></div><br><br><br>
+            
+            
+
+            <div id="introspect_div_105" class="introspection"></div>
+        
+
+        
+        
+
+        
+                
+
+
+    </div>
+</div>
+
+
+    
+<span id="cell_outer_89">
+    
+    <div class="text_cell" id="cell_text_89">
+        
+<p><img src="http://matrix.skku.ac.kr/Lab-Book/K-32-5.png" width="769"></p>        
+    </div>
+
+
+
+</span>
+
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_107" class="cell_visible">
+    <div id="cell_107" class="cell_evaluated">
+
+        
+        
+        
+            
+                
+            
+            
+                <div class="cell_input_print"><script type="text/code">L4=matrix_transformation(C, L1)   # 선형변환을 이용한 새로운 점들의 좌표 계산
+SL4=line(L4, color="green")   # 위 점들을 지나는 도형 그리기
+SL4.show(aspect_ratio=1, figsize=5)</script></div><br><br><br>
+            
+            
+
+            <div id="introspect_div_107" class="introspection"></div>
+        
+
+        
+        
+
+        
+                
+
+
+    </div>
+</div>
+
+
+    
+<span id="cell_outer_91">
+    
+    <div class="text_cell" id="cell_text_91">
+        
+<p><img src="http://matrix.skku.ac.kr/Lab-Book/K-32-6.png" width="769"></p>
+        
+    </div>
+
+
+
+</span>
+
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_109" class="cell_visible">
+    <div id="cell_109" class="cell_evaluated">
+
+        
+        
+        
+            
+                
+            
+            
+                <div class="cell_input_print"><script type="text/code">(SL1+SL2+SL3+SL4).show(aspect_ratio=1, figsize=5)</script></div><br><br><br>
+            
+            
+
+            <div id="introspect_div_109" class="introspection"></div>
+        
+
+        
+        
+
+        
+                
+
+
+    </div>
+</div>
+
+
+    
+<span id="cell_outer_94">
+    
+    <div class="text_cell" id="cell_text_94">
+        <p>&nbsp;</p>
+            <p style="margin-top: 0pt; margin-bottom: 0pt; text-align: justify; line-height: 21.333332061767578px; font-size: 10pt; font-family: 함초롬바탕; margin-right: 0.2pt;"><span style="font-size: 21pt; font-family: '맑은 고딕'; color: #0000ff; line-height: 44.79999923706055px;">Chapter 7. Dimension and Structure</span></p>
+<p style="margin-top: 0pt; margin-bottom: 0pt; text-align: justify; line-height: 21.333332061767578px; font-size: 10pt; font-family: 함초롬바탕; margin-right: 0.2pt;"><span style="font-size: 11pt; font-family: '맑은 고딕'; color: #0000ff; line-height: 23.46666717529297px;"><br /></span></p>
+<p><img src="http://matrix.skku.ac.kr/Lab-Book/K-33.png" width="769"></p>        
+    </div>
+
+
+
+</span>
+
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_111" class="cell_visible">
+    <div id="cell_111" class="cell_evaluated">
+
+        
+        
+        
+            
+                
+            
+            
+                <div class="cell_input_print"><script type="text/code">x1=vector([1, 2, 3])
+x2=vector([-1, 0, 2])
+x3=vector([3, 1, 1])
+A=column_matrix([x1, x2, x3])   # x1, x2, x3를 열벡터로 하는 행렬 생성
+print "A="
+print A
+print
+print "det(A) =", A.det()   # 행렬 A의 행렬식 구하기</script></div>
+            
+            
+<p><img src="http://matrix.skku.ac.kr/Lab-Book/K-33-1.png" width="769"></p>    <br><br>
+            <div id="introspect_div_111" class="introspection"></div>
+        
+
+        
+        
+
+        
+                
+
+
+    </div>
+</div>
+
+
+    
+<span id="cell_outer_95">
+    
+    <div class="text_cell" id="cell_text_95">
+        
+<p><img src="http://matrix.skku.ac.kr/Lab-Book/K-34.png" width="769"></p>        
+    </div>
+
+
+
+</span>
+
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_113" class="cell_visible">
+    <div id="cell_113" class="cell_evaluated">
+
+        
+        
+        
+            
+                
+            
+            
+                <div class="cell_input_print"><script type="text/code">A=matrix([[4, 12, -7, 6], [1, 3, -2, 1], [3, 9, -2, 11]])
+print "Null space of A is", A.right_kernel()   # 행렬 A의 해공간 구하기</script></div><br><br><br>
+            
+            
+
+            <div id="introspect_div_113" class="introspection"></div>
+        
+
+        
+        
+
+        
+                
+
+
+    </div>
+</div>
+
+
+    
+<span id="cell_outer_97">
+    
+    <div class="text_cell" id="cell_text_97">
+        
+<p><img src="http://matrix.skku.ac.kr/Lab-Book/K-35.png" width="769"></p>        
+    </div>
+
+
+
+</span>
+
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_116" class="cell_visible">
+    <div id="cell_116" class="cell_evaluated">
+
+        
+        
+        
+            
+                
+            
+            
+                <div class="cell_input_print"><script type="text/code">A = matrix([[1, -2, 1, 1, 2], [-1, 3, 0, 2, -1], [0, 1, 1, 3, 4], [1, 2, 5, 13, 5]])
+print "rank(A) =", A.rank()   # rank 구하기
+print "nullity(A) =", A.right_nullity()   # nullity 구하기</script></div><br><br><br>
+            
+            
+
+            <div id="introspect_div_116" class="introspection"></div>
+        
+
+        
+        
+
+        
+                
+
+
+    </div>
+</div>
+
+
+    
+<span id="cell_outer_99">
+    
+    <div class="text_cell" id="cell_text_99">
+        
+<p><img src="http://matrix.skku.ac.kr/Lab-Book/K-36.png" width="769"></p>        
+    </div>
+
+
+
+</span>
+
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_118" class="cell_visible">
+    <div id="cell_118" class="cell_evaluated">
+
+        
+        
+        
+            
+                
+            
+            
+                <div class="cell_input_print"><script type="text/code">x1=vector([1,1,0])
+x2=vector([0,1,2])
+x3=vector([1,2,1])
+A=matrix([x1,x2,x3])   # x1, x2, x3를 행벡터로 하는 행렬 생성
+print "A="
+print A</script></div><br><br><br>
+            
+            
+
+            <div id="introspect_div_118" class="introspection"></div>
+        
+
+        
+        
+
+        
+                
+
+
+    </div>
+</div>
+
+
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_122" class="cell_visible">
+    <div id="cell_122" class="cell_evaluated">
+
+        
+        
+        
+            
+                
+            
+            
+                <div class="cell_input_print"><script type="text/code">[G, mu]=A.gram_schmidt()  # 직교화 과정: 행에 대하여 직교기저를 찾는다. A==mu*G
+print "G="
+print G</script></div><br><br><br>
+            
+            
+
+            <div id="introspect_div_122" class="introspection"></div>
+        
+
+        
+        
+
+        
+                
+
+
+    </div>
+</div>
+
+
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_123" class="cell_visible">
+    <div id="cell_123" class="cell_evaluated">
+
+        
+        
+        
+            
+                
+            
+            
+                <div class="cell_input_print"><script type="text/code">N=matrix([G.row(i) / G.row(i).norm() for i in range(0, 3)]) # 정규화과정: 정규화한 직교기저를 행으로 하는 행렬
+print "N="
+print N</script></div><br><br><br>
+            
+            
+
+            <div id="introspect_div_123" class="introspection"></div>
+        
+
+        
+        
+
+        
+                
+
+
+    </div>
+</div>
+
+
+    
+<span id="cell_outer_100">
+    
+    <div class="text_cell" id="cell_text_100">
+        
+<p><img src="http://matrix.skku.ac.kr/Lab-Book/K-37.png" width="769"></p>        
+    </div>
+
+
+
+</span>
+
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_120" class="cell_visible">
+    <div id="cell_120" class="cell_evaluated">
+
+        
+        
+        
+            
+                
+            
+            
+                <div class="cell_input_print"><script type="text/code">x1=vector([1, 2, 0])
+x2=vector([1, 1, 1])
+x3=vector([2, 0, 1])
+A=column_matrix([x1, x2, x3])   # x1, x2, x3를 열벡터로 하는 행렬 생성
+y1=vector([3, -1, 4])
+y2=vector([7, 1, 1])
+y3=vector([6, 1, -4])
+B=column_matrix([y1, y2, y3])   # y1, y2, y3를 열벡터로 하는 행렬 생성
+print "[ y1: y2: y3: x1: x2: x3 ] ="
+print B.augment(A)
+print
+C=B.augment(A).rref()   # [ y1: y2: y3: x1: x2: x3 ]의 RREF 구하기
+print "RREF([ y1: y2: y3: x1: x2: x3 ]) ="
+print C
+print 
+P=C.submatrix(0, 3, 3, 3)  # A.submatrix(a, b, c, d) # 행렬의 (a+1, b+1) 성분부터 c개의 행, d개의 열로 이루어진 부분행렬
+print "P ="
+print P
+</script></div>
+            
+            
+
+            <div id="introspect_div_120" class="introspection"></div>
+        
+
+        
+        
+
+        
+                
+
+
+    </div>
+</div>
+
+
+    
+<span id="cell_outer_102">
+    
+    <div class="text_cell" id="cell_text_102">
+
+        
+    </div>
+
+
+
+</span>
+
+    
+
+<br><br>    <p><img src="http://matrix.skku.ac.kr/Lab-Book/K-37-1.png" width="769"></p>
+    
+
+
+
+
+<div id="cell_outer_124" class="cell_visible">
+    <div id="cell_124" class="cell_evaluated">
+
+        
+        
+        
+            
+                
+            
+            
+                <div class="cell_input_print"><script type="text/code">xa=vector([1, 5, 2])
+P*xa</script></div><br><br><br>
+            
+            
+
+            <div id="introspect_div_124" class="introspection"></div>
+        
+
+        
+        
+
+        
+                
+
+
+    </div>
+</div>
+
+
+    
+<span id="cell_outer_104">
+    
+    <div class="text_cell" id="cell_text_104">
+        <p>&nbsp;</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt; text-align: justify; line-height: 21.333332061767578px; font-size: 10pt; font-family: 함초롬바탕; margin-right: 0.2pt;"><span style="font-size: 21pt; font-family: '맑은 고딕'; color: #0000ff; line-height: 44.79999923706055px;">Chapter 8. Diagonalization (행렬의 대각화)</span></p>
+<p style="margin-top: 0pt; margin-bottom: 0pt; text-align: justify; line-height: 21.333332061767578px; font-size: 10pt; font-family: 함초롬바탕; margin-right: 0.2pt;"><span style="font-family: '맑은 고딕';"><br /></span></p>
+<p style="margin-top: 0pt; margin-bottom: 0pt; text-align: justify; line-height: 21.333332061767578px; font-size: 10pt; font-family: 함초롬바탕; margin-right: 0.2pt;"><span style="font-family: '맑은 고딕'; color: #0000ff;"><br /></span></p>
+<p><img src="http://matrix.skku.ac.kr/Lab-Book/K-38.png" width="769"></p>
+        
+    </div>
+
+
+
+</span>
+
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_126" class="cell_visible">
+    <div id="cell_126" class="cell_evaluated">
+
+        
+        
+        
+            
+                
+            
+            
+                <div class="cell_input_print"><script type="text/code">var('x, y')
+h(x, y) = [2*x+y, x-y, x+4*y]
+T = linear_transformation(QQ^2, QQ^3, h)
+x1=vector([0, 1])
+x2=vector([1, 0])
+y1=vector([0, 0, 1])
+y2=vector([0, 1, 0])
+y3=vector([1, 0, 0])
+B=column_matrix([y1, y2, y3, T(x1), T(x2)])   # 열벡터로 이루어진 행렬 생성
+print "[y1: y2: y3: T(x1): T(x2)] ="
+print B
+print
+C=B.rref()   # [y1: y2: y3: T(x1): T(x2)]의 RREF 구하기
+print "RREF[y1: y2: y3: T(x1): T(x2)] ="
+print C
+print
+AP=C.submatrix(0, 3, 3, 2) # A.submatrix(a, b, c, d)
+# 행렬의 (a+1, b+1) 성분부터 c개의 행, d개의 열로 이루어진 부분행렬
+print "AP ="
+print AP</script></div>
+            
+            
+
+            <div id="introspect_div_126" class="introspection"></div>
+        
+<br><br><p><img src="http://matrix.skku.ac.kr/Lab-Book/K-38-1.png" width="769"></p>
+        
+        <div class="cell_input_print"><script type="text/code">xa=vector([6, -4])   # 의 순서기저가  이므로 이다.
+AP*xa</script></div>
+
+        
+                
+
+
+    </div>
+</div>
+
+<p>&nbsp;</p>
+    
+<span id="cell_outer_106">
+    
+    <div class="text_cell" id="cell_text_106">
+        
+<p><img src="http://matrix.skku.ac.kr/Lab-Book/K-39.png" width="769"></p>
+        
+    </div>
+
+
+
+</span>
+
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_128" class="cell_visible">
+    <div id="cell_128" class="cell_evaluated">
+
+        
+        
+        
+            
+                
+            
+            
+                <div class="cell_input_print"><script type="text/code">A=matrix(QQ, [[0, 0, -2], [1, 2, 1], [1, 0, 3]])
+A.eigenvalues()   # 고유값 구하기</script></div><br><br><br>
+            
+            
+
+            <div id="introspect_div_128" class="introspection"></div>
+        
+
+        
+        
+
+        
+                
+
+
+    </div>
+</div>
+
+
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_131" class="cell_visible">
+    <div id="cell_131" class="cell_evaluated">
+
+        
+        
+        
+            
+                
+            
+            
+                <div class="cell_input_print"><script type="text/code">A.eigenvectors_right()   # 고유벡터 구하기: (고유값, [ 고유벡터 ], 중복도)</script></div>
+            
+            
+
+            <div id="introspect_div_131" class="introspection"></div>
+        
+
+        
+        
+
+        
+                
+
+
+    </div>
+</div>
+
+
+    
+<span id="cell_outer_108">
+    
+    <div class="text_cell" id="cell_text_108">
+        
+        
+    </div>
+
+
+
+</span>
+
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_132" class="cell_visible">
+    <div id="cell_132" class="cell_evaluated">
+
+        
+        
+        
+     <p><img src="http://matrix.skku.ac.kr/Lab-Book/K-39-1.png" width="769"></p><br><br>
+                
+            
+            
+                <div class="cell_input_print"><script type="text/code">print A.is_diagonalizable()   # 대각화 가능 여부 확인</script></div><br><br><br>
+            
+            
+
+            <div id="introspect_div_132" class="introspection"></div>
+        
+
+        
+        
+
+        
+                
+
+
+    </div>
+</div>
+
+
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_134" class="cell_visible">
+    <div id="cell_134" class="cell_evaluated">
+
+        
+        
+        
+            
+                
+            
+            
+                <div class="cell_input_print"><script type="text/code">x1=vector([1, -1/2, -1/2])   # 고유벡터1 정의
+x2=vector([1, 0, -1])   # 고유벡터2 정의
+x3=vector([0, 1, 0])   # 고유벡터3 정의
+P=column_matrix([x1, x2, x3])   # 세 고유벡터를 열벡터로 하는 행렬
+print "P ="
+print P
+</script></div><br><br><br>
+            
+            
+
+            <div id="introspect_div_134" class="introspection"></div>
+        
+
+        
+        
+
+        
+                
+
+
+    </div>
+</div>
+
+
+    
+<span id="cell_outer_110">
+    
+    <div class="text_cell" id="cell_text_110">
+        
+        
+    </div>
+
+
+
+</span>
+
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_135" class="cell_visible">
+    <div id="cell_135" class="cell_evaluated">
+
+        
+        
+        
+            
+                
+            
+            
+                <div class="cell_input_print"><script type="text/code">print "D="
+print P^-1*A*P   # 대각화 가능하다면 고유값을 대각원소로 하는 대각행렬 생성됨</script></div><br><br><br>
+            
+            
+
+            <div id="introspect_div_135" class="introspection"></div>
+        
+
+        
+        
+
+        
+                
+
+
+    </div>
+</div>
+
+
+    
+<span id="cell_outer_112">
+    
+    <div class="text_cell" id="cell_text_112">
+        
+<p><img src="http://matrix.skku.ac.kr/Lab-Book/K-40.png" width="769"></p>        
+    </div>
+
+
+
+</span>
+
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_137" class="cell_visible">
+    <div id="cell_137" class="cell_evaluated">
+
+        
+        
+        
+            
+                
+            
+            
+                <div class="cell_input_print"><script type="text/code">A=matrix(QQ, [[2, -1, 0, 1], [0, 3, -1, 0], [0, 1, 1, 0], [0, -1, 0, 3]])
+print "A is diagonalizable?", A.is_diagonalizable()   # 대각화 가능 여부 확인
+print 
+print "A="
+print A
+print
+print "JCF of A="
+A.jordan_form()   # Jordan 표준형</script></div><br><br><br>
+            
+            
+
+            <div id="introspect_div_137" class="introspection"></div>
+        
+
+        
+        
+
+        
+                
+
+
+    </div>
+</div>
+
+
+    
+<span id="cell_outer_114">
+    
+    <div class="text_cell" id="cell_text_114">
+        
+<p><img src="http://matrix.skku.ac.kr/Lab-Book/K-41.png" width="769"></p>
+        
+    </div>
+
+
+
+</span>
+
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_139" class="cell_visible">
+    <div id="cell_139" class="cell_evaluated">
+
+        
+        
+        
+            
+                
+            
+            
+                <div class="cell_input_print"><script type="text/code">A=matrix([[sqrt(3), 2], [0, sqrt(3)]])
+B=A.transpose()*A
+C=A*A.transpose()
+eig=B.eigenvalues()   # 고유값 구하기
+sv=[sqrt(i) for i in eig]   # 특이값 구하기
+print sv</script></div><br><br><br>
+            
+            
+
+            <div id="introspect_div_139" class="introspection"></div>
+        
+
+        
+        
+
+        
+                
+
+
+    </div>
+</div>
+
+
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_141" class="cell_visible">
+    <div id="cell_141" class="cell_evaluated">
+
+        
+        
+        
+            
+                
+            
+            
+                <div class="cell_input_print"><script type="text/code">B.eigenvectors_right()   #  의 고유벡터 구하기</script></div><br><br><br>
+            
+            
+
+            <div id="introspect_div_141" class="introspection"></div>
+        
+
+        
+        
+
+        
+                
+
+
+    </div>
+</div>
+
+
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_142" class="cell_visible">
+    <div id="cell_142" class="cell_evaluated">
+
+        
+        
+        
+            
+                
+            
+            
+                <div class="cell_input_print"><script type="text/code">G=matrix([[1, sqrt(3)], [1, -1/3*sqrt(3)]])
+Vh=matrix([(1/(G.row(j).norm())) * G.row(j) for j in range(0, 2)])
+Vh=Vh.simplify()    #  구하기
+print Vh</script></div><br><br><br>
+            
+            
+
+            <div id="introspect_div_142" class="introspection"></div>
+        
+
+        
+        
+
+        
+                
+
+
+    </div>
+</div>
+
+
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_143" class="cell_visible">
+    <div id="cell_143" class="cell_evaluated">
+
+        
+        
+        
+            
+                
+            
+            
+                <div class="cell_input_print"><script type="text/code">C.eigenvectors_right()   # 의 고유벡터 구하기</script></div><br><br><br>
+            
+            
+
+            <div id="introspect_div_143" class="introspection"></div>
+        
+
+        
+        
+
+        
+                
+
+
+    </div>
+</div>
+
+
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_144" class="cell_visible">
+    <div id="cell_144" class="cell_evaluated">
+
+        
+        
+        
+            
+                
+            
+            
+                <div class="cell_input_print"><script type="text/code">F=matrix([[1, 1/3*sqrt(3)], [1, -sqrt(3)]])
+U=matrix([(1/(F.row(j).norm())) * F.row(j) for j in range(0,2)])
+U=U.simplify().transpose()    #  구하기
+print U</script></div><br><br><br>
+            
+            
+
+            <div id="introspect_div_144" class="introspection"></div>
+        
+
+        
+        
+
+        
+                
+
+
+    </div>
+</div>
+
+
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_145" class="cell_visible">
+    <div id="cell_145" class="cell_evaluated">
+
+        
+        
+        
+            
+                
+            
+            
+                <div class="cell_input_print"><script type="text/code">S=diagonal_matrix(sv)   #  구하기
+print "S="
+print S
+print
+print "U*S*Vh=A?", bool(U*S*Vh==A)   #  임을 확인</script></div><br><br><br>
+            
+            
+
+            <div id="introspect_div_145" class="introspection"></div>
+        
+
+        
+        
+
+        
+                
+
+
+    </div>
+</div>
+
+
+    
+<span id="cell_outer_115">
+    
+    <div class="text_cell" id="cell_text_115">
+        
+<p><img src="http://matrix.skku.ac.kr/Lab-Book/K-42.png" width="769"></p>        
+    </div>
+
+
+
+</span>
+
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_146" class="cell_visible">
+    <div id="cell_146" class="cell_evaluated">
+
+        
+        
+        
+            
+                
+            
+            
+                <div class="cell_input_print"><script type="text/code">A=matrix([[1, 1], [0, 1], [1, 0]])
+print "A="
+print A
+print
+print "Pseudo-inverse of A="
+print (A.transpose()*A).inverse()*A.transpose() # Pseudo-inverse 구하기</script></div><br><br><br>
+            
+            
+
+            <div id="introspect_div_146" class="introspection"></div>
+        
+
+        
+        
+
+        
+                
+
+
+    </div>
+</div>
+
+
+    
+<span id="cell_outer_117">
+    
+    <div class="text_cell" id="cell_text_117">
+        <p>&nbsp;</p>
+            <p style="margin-top: 0pt; margin-bottom: 0pt; text-align: justify; line-height: 21.333332061767578px; font-size: 10pt; font-family: 함초롬바탕; margin-right: 0.2pt;"><span style="font-size: 21pt; font-family: '맑은 고딕'; color: #0000ff; line-height: 44.79999923706055px;">Chapter 9. General Vector Spaces</span></p>
+<p style="margin-top: 0pt; margin-bottom: 0pt; text-align: justify; line-height: 21.333332061767578px; font-size: 10pt; font-family: 함초롬바탕; margin-right: 0.2pt;"><span style="font-family: '맑은 고딕';"><br /></span></p>
+<p><img src="http://matrix.skku.ac.kr/Lab-Book/K-43.png" width="769"></p>        
+        
+    </div>
+
+
+
+</span>
+
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_148" class="cell_visible">
+    <div id="cell_148" class="cell_evaluated">
+
+        
+        
+        
+            
+                
+            
+            
+                <div class="cell_input_print"><script type="text/code">u=vector([1, 2-I, -3+2*I])   # I 는 허수단위
+print "u =", u
+print "u2 =", u.conjugate()   # 벡터 u의 conjugate 구하기</script></div><br><br><br>
+            
+            
+
+            <div id="introspect_div_148" class="introspection"></div>
+        
+
+        
+        
+
+        
+                
+
+
+    </div>
+</div>
+
+
+    
+<span id="cell_outer_119">
+    
+    <div class="text_cell" id="cell_text_119">
+        
+<p><img src="http://matrix.skku.ac.kr/Lab-Book/K-44.png" width="769"></p>                
+    </div>
+
+
+
+</span>
+
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_150" class="cell_visible">
+    <div id="cell_150" class="cell_evaluated">
+
+        
+        
+        
+            
+                
+            
+            
+                <div class="cell_input_print"><script type="text/code">u=vector([2*I, 0, 1+3*I])   # I 는 허수단위
+v=vector([2-I, 0, 1+3*I])
+print v.hermitian_inner_product(u)   # 유클리드 내적 구하기
+# 앞에 오는 벡터에 대하여 켤레복소수를 취한다
+# < u, v > = v.hermitian_inner_product(u)</script></div><br><br><br>
+            
+            
+
+            <div id="introspect_div_150" class="introspection"></div>
+        
+
+        
+        
+
+        
+                
+
+
+    </div>
+</div>
+
+
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_152" class="cell_visible">
+    <div id="cell_152" class="cell_evaluated">
+
+        
+        
+        
+            
+                
+            
+            
+                <div class="cell_input_print"><script type="text/code">(u-v).norm()   # 유클리드 거리 구하기</script></div><br><br><br>
+            
+            
+
+            <div id="introspect_div_152" class="introspection"></div>
+        
+
+        
+        
+
+        
+                
+
+
+    </div>
+</div>
+
+
+    
+<span id="cell_outer_121">
+    
+    <div class="text_cell" id="cell_text_121">
+        
+<p><img src="http://matrix.skku.ac.kr/Lab-Book/K-45.png" width="769"></p>                        
+    </div>
+
+
+
+</span>
+
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_153" class="cell_visible">
+    <div id="cell_153" class="cell_evaluated">
+
+        
+        
+        
+            
+                
+            
+            
+                <div class="cell_input_print"><script type="text/code">wronskian(1, e^x, e^(2*x))   # Wronskian(f1(x), f2(x), f3(x)) 구하기</script></div><br><br><br>
+            
+            
+
+            <div id="introspect_div_153" class="introspection"></div>
+        
+
+        
+        
+
+        
+                
+
+
+    </div>
+</div>
+
+
+    
+<span id="cell_outer_125">
+    
+    <div class="text_cell" id="cell_text_125">
+        
+            <p>&nbsp;</p>
+<p class="HStyle23" style="margin-top: 0pt; margin-bottom: 0pt; text-align: justify; line-height: 21.760000228881836px; font-size: 10.2pt; font-family: -윤명조120; margin-right: 0.2pt;">&nbsp;</p>
+<p class="HStyle23" style="margin-top: 0pt; margin-bottom: 0pt; text-align: justify; line-height: 21.760000228881836px; font-size: 10.2pt; font-family: -윤명조120; margin-right: 0.2pt;">부록 : <a href="http://matrix.skku.ac.kr/Cal-Book/Appnd/index.htm" target="blank">http://matrix.skku.ac.kr/Cal-Book/Appnd/index.htm</a></p>
+<p class="HStyle23" style="margin-top: 0pt; margin-bottom: 0pt; text-align: justify; line-height: 21.760000228881836px; font-size: 10.2pt; font-family: -윤명조120; margin-right: 0.2pt;">&nbsp;</p>
+<p>&nbsp;&lt; 수학을 위한 소프트웨어 &gt;</p>
+<p><img style="color: #2525f5; font-family: '맑은 고딕'; font-size: 13pt; line-height: 27.733333587646484px; text-align: justify; text-indent: 0pt;" src="http://matrix.skku.ac.kr/Lab-Book/PIC3C94.png" border="0" alt="그림입니다. 원본 그림의 이름: 이상설.jpg 원본 그림의 크기: 가로 337pixel, 세로 436pixel" hspace="0" vspace="0" width="231" height="299" /></p>
+<p><span style="color: #2525f5; font-family: '맑은 고딕'; font-size: 13pt; line-height: 27.733333587646484px; text-align: center;">&lt;Pioneers of Korean Modern Mathematics&gt;</span></p>
+<p><span style="color: #2525f5; font-family: '맑은 고딕'; font-size: 13pt; line-height: 27.733333587646484px; text-align: center;">&nbsp;</span><a style="font-family: 함초롬바탕; font-size: 10pt; line-height: 21.333332061767578px; text-align: center;" href="http://matrix.skku.ac.kr/K-Math-History/index.htm" target="_self"><span style="font-family: '맑은 고딕';">http://matrix.skku.ac.kr/K-Math-History/index.htm</span></a><span style="font-family: '맑은 고딕';">&nbsp;</span></p>
+
+<p style="margin-top: 0pt; margin-bottom: 0pt; line-height: 21.333332061767578px; font-size: 10pt; font-family: 함초롬바탕;"><span style="font-family: 굴림;">학년도/학기 : 2014 학년도 1학기&nbsp;&nbsp;&nbsp;&nbsp; 학수번호-분반 :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 이수구분 : 교양,기초</span></p>
+<p style="margin-top: 0pt; margin-bottom: 0pt; line-height: 21.333332061767578px; font-size: 10pt; font-family: 함초롬바탕;">&nbsp;</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt; line-height: 21.333332061767578px; font-size: 10pt; font-family: 함초롬바탕;"><span style="font-family: 굴림;">교 과 목 명 : 미분적분학 실습 1(수학을 위한 소프트웨어 1)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 교강사명 : &nbsp;...</span></p>
+<p style="margin-top: 0pt; margin-bottom: 0pt; line-height: 21.333332061767578px; font-size: 10pt; font-family: 함초롬바탕;"><span style="font-family: 굴림;">&nbsp;</span><span style="font-size: 19pt; font-family: '맑은 고딕'; color: #0000ff; line-height: 50.66666793823242px;">written by Sang-Gu Lee&nbsp;</span><span style="font-size: 17pt; font-family: '맑은 고딕'; color: #0000ff; line-height: 45.33333206176758px;">with Kyung-Won Kim</span></p>
+<p style="margin-top: 0pt; margin-bottom: 0pt; line-height: 21.333332061767578px; font-size: 10pt; font-family: 함초롬바탕;"><span style="color: #ac00ff; font-family: '맑은 고딕'; font-size: 10pt; text-align: right;">based on Books of Prof. Sang-Gu Lee (Calculus and Linear Algebra with Sage)</span></p>
+<p style="margin-top: 0pt; margin-bottom: 0pt; line-height: 21.333332061767578px; font-size: 10pt; font-family: 함초롬바탕;"><span style="color: #ac00ff; font-family: '맑은 고딕'; font-size: 11pt; line-height: 23.46666717529297px; text-align: right;">&nbsp;collected and rearranged by Kyung-Won Kim, Shaowei Sun and Sang-Gu Lee</span></p>
+<p style="margin-top: 0pt; margin-bottom: 0pt; line-height: 21.333332061767578px; font-size: 10pt; font-family: 함초롬바탕;"><img style="font-size: 8pt; line-height: 16.853334426879883px; text-align: center;" src="http://matrix.skku.ac.kr/Lab-Book/PIC3CB4.png" border="0" alt="" hspace="0" vspace="0" width="297" height="38" /><span style="font-size: 8pt; line-height: 16.853334426879883px; text-align: center;">&nbsp;&nbsp;&nbsp;by&nbsp;</span><img style="font-size: 8pt; line-height: 16.853334426879883px; text-align: center;" src="http://matrix.skku.ac.kr/Lab-Book/PIC3CC5.png" border="0" alt="그림입니다. 원본 그림의 이름: skku.bmp 원본 그림의 크기: 가로 200pixel, 세로 89pixel" hspace="0" vspace="0" width="128" height="57" /></p>
+<p style="margin-top: 0pt; margin-bottom: 0pt; line-height: 21.333332061767578px; font-size: 10pt; font-family: 함초롬바탕;"><img style="font-family: '맑은 고딕'; font-size: 10pt; line-height: 21.066665649414063px; text-align: center;" src="http://matrix.skku.ac.kr/Lab-Book/PIC3CC6.png" border="0" alt="그림입니다. 원본 그림의 이름: Matrix-02.bmp 원본 그림의 크기: 가로 460pixel, 세로 275pixel" hspace="0" vspace="0" width="460" height="275" /></p>
+        
+    </div>
+
+
+
+</span>
+
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_154" class="cell_visible">
+    <div id="cell_154" class="cell_evaluated">
+
+        
+        
+        
+            
+                
+            
+            
+            <br><br><br>
+            
+            
+
+            <div id="introspect_div_154" class="introspection"></div>
+        
+
+        
+        
+
+        
+                
+
+
+    </div>
+</div>
+
+
+
+
+<hr class="usercontrol" />
+
+
+    </body>
+</html>

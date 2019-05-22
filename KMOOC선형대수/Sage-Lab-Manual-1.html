@@ -1,0 +1,2014 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html lang="en">
+    <head>
+        <title>SGLee-Sage-Lab-Manual  -- Sage</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <script type="text/javascript" src="/javascript/jquery/jquery-1.3.2.min.js"></script>
+
+
+<script type="text/javascript">user_name= "guest";</script>
+
+<script  type="text/javascript">
+    worksheet_filename = "pub/2013";
+    worksheet_name = 'SGLee-Sage-Lab-Manual ';
+    server_ping_while_alive();
+</script>
+
+</head>
+
+<body> </body>
+
+<head>
+<script>
+function doSaveAs(){
+    if (document.execCommand){
+        document.execCommand("SaveAs")
+    }
+    else {
+        alert("IE 5.0 이상에서만 가능합니다!")
+    }
+}
+</script>
+
+
+<meta name="viewport" content="user-scalable=yes, initial-scale=device-height, maximum-scale=2.0, munimum-scale=0.1, width=device-height" />
+<link rel="icon" href="http://mathlab.knou.ac.kr:8080/static/favicon.ico">
+<link rel="stylesheet" href="http://mathlab.knou.ac.kr:8080/static/root2.css">
+<script src="http://mathlab.knou.ac.kr:8080/static/jquery.min.js"></script>
+<script src="http://mathlab.knou.ac.kr:8080/embedded_sagecell.js"></script>
+<script>
+$(function() {
+    sagecell.makeSinglecell({
+      inputLocation: '.cell_input_print', linked: true, languages: sagecell.allLanguages, hide: ['computationID', 'messages', 'sessionTitle', 'done', 'sessionFilesTitle', 'sessionFiles', 'files', 'sageMode'], evalButtonText: '실행(Evaluate)'});});
+</script>
+
+</head>
+
+
+
+<body id="guest-worksheet-page" class="">
+
+
+
+
+
+
+
+
+<div class="cell_input_active" id="cell_resizer"></div>
+
+
+
+    
+<span id="cell_outer_0">
+    
+    <div class="text_cell" id="cell_text_0">
+        
+            <p style="margin-top: 0pt; margin-bottom: 0pt; text-align: left; line-height: 21.333332061767578px; font-size: 10pt; font-family: 함초롬바탕; margin-right: 0.2pt;"><span style="font-size: 40pt; font-family: '맑은 고딕'; line-height: 49.06666564941406px;">Lab Manual for Calculus with Sage</span></p>
+<p style="margin-top: 0pt; margin-bottom: 0pt; text-align: left; line-height: 21.333332061767578px; font-size: 40pt; font-family: 함초롬바탕; margin-right: 0.2pt;"><span style="color: #0000ff; font-family: '맑은 고딕'; font-size: 20pt; line-height: 27.733333587646484px; text-align: right;">Prof. Sang-Gu Lee</span></p>
+<p>&nbsp;</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt; text-align: justify; line-height: 21.333332061767578px; font-size: 10pt; font-family: 함초롬바탕; margin-right: 0.2pt;"><img style="font-family: 함초롬바탕; font-size: 8pt; line-height: 16.853334426879883px; text-align: left;" src="http://matrix.skku.ac.kr/Lab-Book/PIC3CB4.png" border="0" alt="" hspace="0" vspace="0" width="297" height="38" /><span style="font-family: 함초롬바탕; font-size: 8pt; line-height: 16.853334426879883px; text-align: left;">&nbsp;&nbsp;&nbsp;by&nbsp;</span><img style="font-family: 함초롬바탕; font-size: 8pt; line-height: 16.853334426879883px; text-align: left;" src="http://matrix.skku.ac.kr/Lab-Book/PIC3CC5.png" border="0" alt="그림입니다. 원본 그림의 이름: skku.bmp 원본 그림의 크기: 가로 200pixel, 세로 89pixel" hspace="0" vspace="0" width="128" height="57" /></p>
+<p>&nbsp;</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt; text-align: justify; line-height: 21.333332061767578px; font-size: 10pt; font-family: 함초롬바탕; margin-right: 0.2pt;"><span style="font-size: 21pt; font-family: '맑은 고딕'; color: #0000ff; line-height: 44.79999923706055px;">Chapter 1. Functions and models</span></p>
+<p style="margin-top: 0pt; margin-bottom: 0pt; text-align: justify; line-height: 21.333332061767578px; font-size: 10pt; font-family: 함초롬바탕;">&nbsp;</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt; text-align: justify; line-height: 21.333332061767578px; font-size: 10pt; font-family: 함초롬바탕;">&nbsp;</p>
+<p><img src="http://matrix.skku.ac.kr/Lab-Book/cal-sage-1.png" width="773"></p>
+        
+    </div>
+
+
+
+</span>
+
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_1" class="cell_visible">
+    <div id="cell_1" class="cell_evaluated">
+
+        
+        
+        
+            
+                
+            
+            
+                <div class="cell_input_print"><script type="text/code">var('x')  # Define variable "x"
+A = plot(x^3/8, x, -3, 3, linestyle="--", color='green')     # graph the first function 
+B = plot(-1/x, x, -3, 3)   # graph the second function
+C = text("y=x^3/8 ", (3, 4), color='green',fontsize=15)      # add the text on given position
+D = text("y= -1/x",(-1,5), fontsize=15 )      # and set the font of the text
+show(A+B+C+D, ymax=10, ymin=-10)   # display graphs and texts one time</script></div><br><br><br>
+            
+            
+
+            <div id="introspect_div_1" class="introspection"></div>
+        
+
+        
+        
+
+        
+                
+
+
+    </div>
+</div>
+
+
+    
+<span id="cell_outer_2">
+    
+    <div class="text_cell" id="cell_text_2">
+        
+<p><img src="http://matrix.skku.ac.kr/Lab-Book/cal-sage-2.png" width="773"></p>
+        
+    </div>
+
+
+
+</span>
+
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_4" class="cell_visible">
+    <div id="cell_4" class="cell_evaluated">
+
+        
+        
+        
+            
+                
+            
+            
+                <div class="cell_input_print"><script type="text/code">var('x')
+f1(x) = x
+f2(x) = 4-x
+plot(piecewise([[(0, 2), f1(x)], [(2, 4), f2]]))   # graph f1 on (0, 2), and f2 on (2, 4)</script></div><br><br><br>
+            
+            
+
+            <div id="introspect_div_4" class="introspection"></div>
+        
+
+        
+        
+
+        
+                
+
+
+    </div>
+</div>
+
+
+    
+<span id="cell_outer_3">
+    
+    <div class="text_cell" id="cell_text_3">
+        
+<p>&nbsp;</p>            <p style="margin-top: 0pt; margin-bottom: 0pt; text-align: justify; line-height: 21.333332061767578px; font-size: 10pt; font-family: 함초롬바탕; margin-right: 0.2pt;"><span style="font-size: 21pt; font-family: '맑은 고딕'; color: #0000ff; line-height: 44.79999923706055px;">Chapter 2. Limits and Derivatives</span></p>
+<p style="margin-top: 0pt; margin-bottom: 0pt; text-align: justify; line-height: 21.333332061767578px; font-size: 10pt; font-family: 함초롬바탕;">&nbsp;</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt; text-align: justify; line-height: 21.333332061767578px; font-size: 10pt; font-family: 함초롬바탕;">&nbsp;</p>
+<p><img src="http://matrix.skku.ac.kr/Lab-Book/cal-sage-3.png" width="773"></p>
+        
+    </div>
+
+
+
+</span>
+
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_6" class="cell_visible">
+    <div id="cell_6" class="cell_evaluated">
+
+        
+        
+        
+            
+                
+            
+            
+                <div class="cell_input_print"><script type="text/code">var( 'x' )
+f(x)=(x^2 - 4)/abs(x - 2)
+print limit(f(x), x=2, dir='minus')  # x=2일 때 좌극한
+print limit(f(x), x=2, dir='plus')    # x=2일 때 우극한</script></div><br><br><br>
+            
+            
+
+            <div id="introspect_div_6" class="introspection"></div>
+        
+
+        
+        
+
+        
+                
+
+
+    </div>
+</div>
+
+
+    
+<span id="cell_outer_5">
+    
+    <div class="text_cell" id="cell_text_5">
+        
+<p><img src="http://matrix.skku.ac.kr/Lab-Book/cal-sage-4.png" width="773"></p>
+        
+    </div>
+
+
+
+</span>
+
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_8" class="cell_visible">
+    <div id="cell_8" class="cell_evaluated">
+
+        
+        
+        
+            
+                
+            
+            
+                <div class="cell_input_print"><script type="text/code">var( 'x' )
+f(x)=sin(x)/abs(cos(x))
+limit(f(x), x=pi/2)  # x=2일 때 극한</script></div><br><br><br>
+            
+            
+
+            <div id="introspect_div_8" class="introspection"></div>
+        
+
+        
+        
+
+        
+                
+
+
+    </div>
+</div>
+
+
+    
+<span id="cell_outer_7">
+    
+    <div class="text_cell" id="cell_text_7">
+<p>&nbsp;</p>        
+            <p style="margin-top: 0pt; margin-bottom: 0pt; text-align: justify; line-height: 21.333332061767578px; font-size: 10pt; font-family: 함초롬바탕; margin-right: 0.2pt;"><span style="font-size: 21pt; font-family: '맑은 고딕'; color: #0000ff; line-height: 44.79999923706055px;">Chapter 3. Differentiation Rules</span></p>
+<p style="margin-top: 0pt; margin-bottom: 0pt; text-align: justify; line-height: 21.333332061767578px; font-size: 10pt; font-family: 함초롬바탕;">&nbsp;</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt; text-align: justify; line-height: 21.333332061767578px; font-size: 10pt; font-family: 함초롬바탕;">&nbsp;</p>
+<p><img src="http://matrix.skku.ac.kr/Lab-Book/cal-sage-5.png" width="773"></p>
+        
+    </div>
+
+
+
+</span>
+
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_11" class="cell_visible">
+    <div id="cell_11" class="cell_evaluated">
+
+        
+        
+        
+            
+                
+            
+            
+                <div class="cell_input_print"><script type="text/code">var('x')
+f(x) = x^2 + 4*e^x
+print diff(f(x), x)   # dy/dx</script></div><br><br><br>
+            
+            
+
+            <div id="introspect_div_11" class="introspection"></div>
+        
+
+        
+        
+
+        
+                
+
+
+    </div>
+</div>
+
+
+    
+<span id="cell_outer_9">
+    
+    <div class="text_cell" id="cell_text_9">
+        
+<p><img src="http://matrix.skku.ac.kr/Lab-Book/cal-sage-6.png" width="773"></p>
+        
+    </div>
+
+
+
+</span>
+
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_10" class="cell_visible">
+    <div id="cell_10" class="cell_evaluated">
+
+        
+        
+        
+            
+                
+            
+            
+                <div class="cell_input_print"><script type="text/code">var('x')
+f(x)=x^2+sqrt(x)
+df(x)=diff(f(x),x)    # 도함수 구하기
+y(x)=df(4)*(x-4)+18 # 기울기(df(4))를 구하여 접선의 방정식 구하기
+print y(x)
+p1=plot(f(x),x,0,10, linestyle="--", color='blue')   # 함수 f(x) 그리기
+p2=plot(y(x),x,0,10, color='red')   # 접선 y(x) 그리기
+show(p1+p2)   # 함수 f(x)와 접선 y(x)를 동시에 보여주기</script></div><br><br><br>
+            
+            
+
+            <div id="introspect_div_10" class="introspection"></div>
+        
+
+        
+        
+
+        
+                
+
+
+    </div>
+</div>
+
+
+    
+<span id="cell_outer_12">
+    
+    <div class="text_cell" id="cell_text_12">
+<p>&nbsp;</p>        
+            <p style="margin-top: 0pt; margin-bottom: 0pt; text-align: justify; line-height: 21.333332061767578px; font-size: 10pt; font-family: 함초롬바탕; margin-right: 0.2pt;"><span style="font-size: 21pt; font-family: '맑은 고딕'; color: #0000ff; line-height: 44.79999923706055px;">Chapter 4. Applications of Differentiation</span></p>
+<p style="margin-top: 0pt; margin-bottom: 0pt; text-align: justify; line-height: 21.333332061767578px; font-size: 10pt; font-family: 함초롬바탕;">&nbsp;</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt; text-align: justify; line-height: 21.333332061767578px; font-size: 10pt; font-family: 함초롬바탕;">&nbsp;</p>
+<p><img src="http://matrix.skku.ac.kr/Lab-Book/cal-sage-7.png" width="773"></p>
+        
+    </div>
+
+
+
+</span>
+
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_14" class="cell_visible">
+    <div id="cell_14" class="cell_evaluated">
+
+        
+        
+        
+            
+                
+            
+            
+                <div class="cell_input_print"><script type="text/code">var('x')
+f(x)=x^3-x
+solve(diff(f(x))==0, x)   # look for the flection points of df
+ma=max(f(-1/3*sqrt(3)), f(1/3*sqrt(3)), f(-3), f(3))   # find maximum value
+mi=min(f(-1/3*sqrt(3)), f(1/3*sqrt(3)), f(-3), f(3))   # find minimum value
+print 'maximum is', ma
+print 'minimum is', mi</script></div><br><br><br>
+            
+            
+
+            <div id="introspect_div_14" class="introspection"></div>
+        
+
+        
+        
+
+        
+                
+
+
+    </div>
+</div>
+
+
+    
+<span id="cell_outer_13">
+    
+    <div class="text_cell" id="cell_text_13">
+        
+<p><img src="http://matrix.skku.ac.kr/Lab-Book/cal-sage-8.png" width="773"></p>
+<a href="http://matrix.skku.ac.kr/Mobile-Sage-G/sage-grapher-newton_method.html" target="blank">http://matrix.skku.ac.kr/Mobile-Sage-G/sage-grapher-newton_method.html</a>
+<p><img src="http://matrix.skku.ac.kr/Lab-Book/cal-sage-8-1.png" width="400"></p>
+<p>&nbsp;</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt; text-align: justify; line-height: 21.333332061767578px; font-size: 10pt; font-family: 함초롬바탕; margin-right: 0.2pt;"><span style="font-size: 21pt; font-family: '맑은 고딕'; color: #0000ff; line-height: 44.79999923706055px;">Chapter 5. Integrals</span></p>
+<p><img src="http://matrix.skku.ac.kr/Lab-Book/cal-sage-9.png" width="773"></p>
+        
+    </div>
+
+
+
+</span>
+
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_16" class="cell_visible">
+    <div id="cell_16" class="cell_evaluated">
+
+        
+        
+        
+            
+                
+            
+            
+                <div class="cell_input_print"><script type="text/code">f(x)=5/(1-x^2)
+P1=plot(f(x), 0.5, sqrt(3)/2, fill="axis")   # fill the area between f(x) and x-axis
+P2=plot(f(x), 0.3, sqrt(3)/2+0.05, color='red')   # graph f(x)
+show(P1+P2)   # show P1 and P2
+print integral(f(x), x, 1/2, sqrt(3)/2).simplify_full()   # integrate f(x)</script></div><br><br><br>
+            
+            
+
+            <div id="introspect_div_16" class="introspection"></div>
+        
+
+        
+        
+
+        
+                
+
+
+    </div>
+</div>
+
+
+    
+<span id="cell_outer_15">
+    
+    <div class="text_cell" id="cell_text_15">
+        
+<p><img src="http://matrix.skku.ac.kr/Lab-Book/cal-sage-10.png" width="773"></p>
+<a href="http://matrix.skku.ac.kr/Mobile-Sage-G/sage-grapher-riemann_sum.html" target="blank">http://matrix.skku.ac.kr/Mobile-Sage-G/sage-grapher-riemann_sum.html</a>
+<p><img src="http://matrix.skku.ac.kr/Lab-Book/cal-sage-10-1.png" width="400"></p>
+<p>&nbsp;</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt; text-align: justify; line-height: 21.333332061767578px; font-size: 10pt; font-family: 함초롬바탕; margin-right: 0.2pt;"><span style="font-size: 21pt; font-family: '맑은 고딕'; color: #0000ff; line-height: 44.79999923706055px;">Chapter 6. Applications of Integration</span></p>
+<p style="margin-top: 0pt; margin-bottom: 0pt; text-align: justify; line-height: 21.333332061767578px; font-size: 10pt; font-family: 함초롬바탕;">&nbsp;</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt; text-align: justify; line-height: 21.333332061767578px; font-size: 10pt; font-family: 함초롬바탕;">&nbsp;</p>
+<p><img src="http://matrix.skku.ac.kr/Lab-Book/cal-sage-11.png" width="773"></p>
+        
+    </div>
+
+
+
+</span>
+
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_18" class="cell_visible">
+    <div id="cell_18" class="cell_evaluated">
+
+        
+        
+        
+            
+                
+            
+            
+                <div class="cell_input_print"><script type="text/code">f(x)=x-1
+g(x)=5-x^2
+p1=plot(f(x),(x,0,2))   # graph 
+p2=plot(g(x),(x,0,2), color='red')   # graph 
+show(p1+p2)   # show the area</script></div><br><br><br>
+            
+            
+
+            <div id="introspect_div_18" class="introspection"></div>
+        
+
+        
+        
+
+        
+                
+
+
+    </div>
+</div>
+
+
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_22" class="cell_visible">
+    <div id="cell_22" class="cell_evaluated">
+
+        
+        
+        
+            
+                
+            
+            
+                <div class="cell_input_print"><script type="text/code">solve(f(x)==g(x), x)   # find the intersection of two curves</script></div><br><br><br>
+            
+            
+
+            <div id="introspect_div_22" class="introspection"></div>
+        
+
+        
+        
+
+        
+                
+
+
+    </div>
+</div>
+
+
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_23" class="cell_visible">
+    <div id="cell_23" class="cell_evaluated">
+
+        
+        
+        
+            
+                
+            
+            
+                <div class="cell_input_print"><script type="text/code">integral(abs(f(x)-g(x)), x, 0, 2)   # Set the range by the solution</script></div><br><br><br>
+            
+            
+
+            <div id="introspect_div_23" class="introspection"></div>
+        
+
+        
+        
+
+        
+                
+
+
+    </div>
+</div>
+
+
+    
+<span id="cell_outer_17">
+    
+    <div class="text_cell" id="cell_text_17">
+        <p>&nbsp;</p>
+            <p style="margin: 0pt 0.2pt 0pt 117.6pt; text-align: justify; text-indent: -117.6pt; line-height: 21.333332061767578px; font-size: 10pt; font-family: 함초롬바탕;"><span style="font-size: 21pt; font-family: '맑은 고딕'; color: #0000ff; line-height: 44.79999923706055px;">Chapter 8. Infinite Sequences and Infinite Series</span></p>
+<p style="margin-top: 0pt; margin-bottom: 0pt; text-align: justify; line-height: 21.333332061767578px; font-size: 10pt; font-family: 함초롬바탕;">&nbsp;</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt; text-align: justify; line-height: 21.333332061767578px; font-size: 10pt; font-family: 함초롬바탕;">&nbsp;</p>
+<p><img src="http://matrix.skku.ac.kr/Lab-Book/cal-sage-12.png" width="773"></p>
+        
+    </div>
+
+
+
+</span>
+
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_20" class="cell_visible">
+    <div id="cell_20" class="cell_evaluated">
+
+        
+        
+        
+            
+                
+            
+            
+                <div class="cell_input_print"><script type="text/code">var('n,i')
+@interact()
+def _(n=slider(1, 100, 1)):  
+    for i in srange(1, n+1,1):
+      print 5*i-3</script></div><br><br><br>
+            
+            
+
+            <div id="introspect_div_20" class="introspection"></div>
+        
+
+        
+        
+
+        
+                
+
+
+    </div>
+</div>
+
+
+    
+
+    
+    
+
+
+
+
+
+
+    
+<span id="cell_outer_19">
+    
+    <div class="text_cell" id="cell_text_19">
+        
+<p><img src="http://matrix.skku.ac.kr/Lab-Book/cal-sage-13.png" width="773"></p>        
+    </div>
+
+
+
+</span>
+
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_25" class="cell_visible">
+    <div id="cell_25" class="cell_evaluated">
+
+        
+        
+        
+            
+                
+            
+            
+                <div class="cell_input_print"><script type="text/code">var('n')
+a(n)=factorial(n)/(n+1)   # Determine 
+rho=limit(abs(a(n+1)/a(n)), n=+oo)   # Find 
+R=1/rho   # Find 
+print 'The radius is ', R</script></div><br><br><br>
+            
+            
+
+            <div id="introspect_div_25" class="introspection"></div>
+        
+
+        
+        
+
+        
+                
+
+
+    </div>
+</div>
+
+
+    
+<span id="cell_outer_21">
+    
+    <div class="text_cell" id="cell_text_21">
+        <p>&nbsp;</p>
+            <p style="margin: 0pt 0.2pt 0pt 119.1pt; text-align: justify; text-indent: -119.1pt; line-height: 21.333332061767578px; font-size: 10pt; font-family: 함초롬바탕;"><span style="font-size: 21pt; font-family: '맑은 고딕'; color: #0000ff; line-height: 44.79999923706055px;">Chapter 9. Vectors and the Geometry of Space</span></p>
+<p style="margin-top: 0pt; margin-bottom: 0pt; text-align: justify; line-height: 21.333332061767578px; font-size: 10pt; font-family: 함초롬바탕;">&nbsp;</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt; text-align: justify; line-height: 21.333332061767578px; font-size: 10pt; font-family: 함초롬바탕;">&nbsp;</p>
+<p><img src="http://matrix.skku.ac.kr/Lab-Book/cal-sage-14.png" width="773"></p>
+        
+    </div>
+
+
+
+</span>
+
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_27" class="cell_visible">
+    <div id="cell_27" class="cell_evaluated">
+
+        
+        
+        
+            
+                
+            
+            
+                <div class="cell_input_print"><script type="text/code">var('x, y, z')
+implicit_plot3d(x+y==5, (x, -5, 5), (y, -5, 5), (z, -5, 5))   # graph  on in R^3
+# 실행이 안되면 http://sagecell.sagemath.org/ 에서 명령어를 붙여넣기 후 실행
+</script></div><br><br><br>
+            
+            
+
+            <div id="introspect_div_27" class="introspection"></div>
+        
+
+        
+        
+
+        
+                
+
+
+    </div>
+</div>
+
+
+    
+<span id="cell_outer_26">
+    
+    <div class="text_cell" id="cell_text_26">
+        
+<p><img src="http://matrix.skku.ac.kr/Lab-Book/cal-sage-15.png" width="773"></p>
+        
+    </div>
+
+
+
+</span>
+
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_29" class="cell_visible">
+    <div id="cell_29" class="cell_evaluated">
+
+        
+        
+        
+            
+                
+            
+            
+                <div class="cell_input_print"><script type="text/code">a=vector([2, -3])   # define a vector a
+b=vector([-2, -1])   # define a vector b
+c=vector([6, -5])   # define a vector c
+plot(a, color='red')+plot(b, color='green')+plot(c, color='blue')   # graph three vectors</script></div><br><br><br>
+            
+            
+
+            <div id="introspect_div_29" class="introspection"></div>
+        
+
+        
+        
+
+        
+                
+
+
+    </div>
+</div>
+
+
+    
+<span id="cell_outer_28">
+    
+    <div class="text_cell" id="cell_text_28">
+        
+<p><img src="http://matrix.skku.ac.kr/Lab-Book/cal-sage-16.png" width="773"></p>        
+    </div>
+
+
+
+</span>
+
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_31" class="cell_visible">
+    <div id="cell_31" class="cell_evaluated">
+
+        
+        
+        
+            
+                
+            
+            
+                <div class="cell_input_print"><script type="text/code">a=vector([6,-3,4])
+b=vector([2,0,-3])
+s=b.dot_product(a)   # find the dot product of a and b
+c=b.cross_product(a)   # find the cross product of a and b
+theta=arccos(a.dot_product(b)/(a.norm()*b.norm()))   # find the angle between a and b
+
+print 'The dot product is', s
+print 'The cross product is', c
+print 'The angle between of a, b is', theta</script></div><br><br><br>
+            
+            
+
+            <div id="introspect_div_31" class="introspection"></div>
+        
+
+        
+        
+
+        
+                
+
+
+    </div>
+</div>
+
+
+    
+<span id="cell_outer_30">
+    
+    <div class="text_cell" id="cell_text_30">
+        <p>&nbsp;</p>
+            <p style="margin: 0pt 0.2pt 0pt 119.1pt; text-align: justify; text-indent: -119.1pt; line-height: 21.333332061767578px; font-size: 10pt; font-family: 함초롬바탕;"><span style="font-size: 21pt; font-family: '맑은 고딕'; color: #0000ff; line-height: 44.79999923706055px;">Chapter 10. Vector Functions.</span></p>
+<p style="margin-top: 0pt; margin-bottom: 0pt; text-align: justify; line-height: 21.333332061767578px; font-size: 10pt; font-family: 함초롬바탕;"><span style="font-size: 15pt; color: #4ab510; line-height: 32px;"><br /></span></p>
+<p><img src="http://matrix.skku.ac.kr/Lab-Book/cal-sage-17.png" width="773"></p>
+        
+    </div>
+
+
+
+</span>
+
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_33" class="cell_visible">
+    <div id="cell_33" class="cell_evaluated">
+
+        
+        
+        
+            
+                
+            
+            
+                <div class="cell_input_print"><script type="text/code">var('t')
+r=vector([cos(2*t), sin(3*t), t])   # Define r(t)
+C=parametric_plot3d(r, (t, 0, 2*pi),color='green', thickness=2)   # Sketch curve
+t1=pi/10   # location of arrows
+t2=2*pi/3
+t3=5*pi/3
+Ar1=arrow3d(r(t=t1), r(t=t1+0.1), color='green')   # Draw arrows
+Ar2=arrow3d(r(t=t2), r(t=t2+0.1), color='green')
+Ar3=arrow3d(r(t=t3), r(t=t3+0.1), color='green')
+C+Ar1+Ar2+Ar3
+# 실행이 안되면 http://sagecell.sagemath.org/ 에서 명령어를 붙여넣기 후 실행
+</script></div><br><br><br>
+            
+            
+
+            <div id="introspect_div_33" class="introspection"></div>
+        
+
+        
+        
+
+        
+                
+
+
+    </div>
+</div>
+
+
+    
+<span id="cell_outer_32">
+    
+    <div class="text_cell" id="cell_text_32">
+        
+<p><img src="http://matrix.skku.ac.kr/Lab-Book/cal-sage-18.png" width="773"></p>
+        
+    </div>
+
+
+
+</span>
+
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_35" class="cell_visible">
+    <div id="cell_35" class="cell_evaluated">
+
+        
+        
+        
+            
+                
+            
+            
+                <div class="cell_input_print"><script type="text/code">var('t')
+x(t)=cos(t)
+y(t)=t
+r(t)=(x(t),y(t))
+dr(t)=(diff(x(t),t),diff(y(t),t))
+dr(t)   #</script></div><br><br><br>
+            
+            
+
+            <div id="introspect_div_35" class="introspection"></div>
+        
+
+        
+        
+
+        
+                
+
+
+    </div>
+</div>
+
+
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_37" class="cell_visible">
+    <div id="cell_37" class="cell_evaluated">
+
+        
+        
+        
+            
+                
+            
+            
+                <div class="cell_input_print"><script type="text/code">t0=pi/4
+p1=r(t0)   # Find the startpoint of tangent vector at 
+p2=dr(t0)/abs(dr(t0))+r(t0)   # Find the endpoint of tangent vector at 
+p=parametric_plot((x(t), y(t)), (t, 0, 2*pi))   # Sketch curve
+utv=line([p1, p2], rgbcolor=(1, 0, 0), thickness=2)   # Sketch tangent vector
+show(p+utv)</script></div><br><br><br>
+            
+            
+
+            <div id="introspect_div_37" class="introspection"></div>
+        
+
+        
+        
+
+        
+                
+
+
+    </div>
+</div>
+
+
+    
+<span id="cell_outer_34">
+    
+    <div class="text_cell" id="cell_text_34">
+        
+<p><img src="http://matrix.skku.ac.kr/Lab-Book/cal-sage-19.png" width="773"></p>        
+    </div>
+
+
+
+</span>
+
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_38" class="cell_visible">
+    <div id="cell_38" class="cell_evaluated">
+
+        
+        
+        
+            
+                
+            
+            
+                <div class="cell_input_print"><script type="text/code">var('t')
+r(t)=(4*t, 3*cos(t), 3*sin(t))   # Define r(t)
+parametric_plot3d(r(t), (t, -5, 5))   # Sketch curve
+# 실행이 안되면 http://sagecell.sagemath.org/ 에서 명령어를 붙여넣기 후 실행
+</script></div><br><br><br>
+            
+            
+
+            <div id="introspect_div_38" class="introspection"></div>
+        
+
+        
+        
+
+        
+                
+
+
+    </div>
+</div>
+
+
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_40" class="cell_visible">
+    <div id="cell_40" class="cell_evaluated">
+
+        
+        
+        
+            
+                
+            
+            
+                <div class="cell_input_print"><script type="text/code">dr=diff(r(t), t)
+s(t)=sqrt(dr[0]^2+dr[1]^2+dr[2]^2)
+integral(s(t), t, -5, 5)   # length of the curve  (답 50)</script></div><br><br><br>
+            
+            
+
+            <div id="introspect_div_40" class="introspection"></div>
+        
+
+        
+        
+
+        
+                
+
+
+    </div>
+</div>
+
+
+    
+<span id="cell_outer_36">
+    
+    <div class="text_cell" id="cell_text_36">
+        <p>&nbsp;</p>
+            <p style="margin-top: 0pt; margin-bottom: 0pt; text-align: justify; line-height: 21.333332061767578px; font-size: 10pt; font-family: 함초롬바탕; margin-right: 0.2pt;"><span style="font-size: 21pt; font-family: '맑은 고딕'; color: #0000ff; line-height: 44.79999923706055px;">Chapter 11. Partial Derivatives</span></p>
+<p style="margin-top: 0pt; margin-bottom: 0pt; text-align: justify; line-height: 21.333332061767578px; font-size: 10pt; font-family: 함초롬바탕;">&nbsp;</p>
+<p><img src="http://matrix.skku.ac.kr/Lab-Book/cal-sage-20.png" width="773"></p>
+        
+    </div>
+
+
+
+</span>
+
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_41" class="cell_visible">
+    <div id="cell_41" class="cell_evaluated">
+
+        
+        
+        
+            
+                
+            
+            
+                <div class="cell_input_print"><script type="text/code">var('x, y')
+f(x, y)=24*x*y-7*x^2*y^2
+f_x = diff(f(x,y), x, 1)   # partial derivatives 
+f_y = diff(f(x,y), y, 1)   # partial derivatives 
+print "fx(x,y)=", f_x
+print "fy(x,y)=", f_y</script></div><br><br><br>
+            
+            
+
+            <div id="introspect_div_41" class="introspection"></div>
+        
+
+        
+        
+
+        
+                
+
+
+    </div>
+</div>
+
+
+    
+<span id="cell_outer_39">
+    
+    <div class="text_cell" id="cell_text_39">
+        
+<p><img src="http://matrix.skku.ac.kr/Lab-Book/cal-sage-21.png" width="773"></p>
+        
+    </div>
+
+
+
+</span>
+
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_43" class="cell_visible">
+    <div id="cell_43" class="cell_evaluated">
+
+        
+        
+        
+            
+                
+            
+            
+                <div class="cell_input_print"><script type="text/code">var('x, y')
+u(x, y)=x*(x^2-3*y^2)
+u_xx=diff(u(x, y), x, 2)   # Find 
+u_yy=diff(u(x, y), y, 2)   # Find 
+print 'Satisfy Laplace’s equation?', bool( u_xx+u_yy==0 )      # Show that</script></div><br><br><br>
+            
+            
+
+            <div id="introspect_div_43" class="introspection"></div>
+        
+
+        
+        
+
+        
+                
+
+
+    </div>
+</div>
+
+
+    
+<span id="cell_outer_42">
+    
+    <div class="text_cell" id="cell_text_42">
+        
+<p><img src="http://matrix.skku.ac.kr/Lab-Book/cal-sage-22.png" width="773"></p>
+        
+    </div>
+
+
+
+</span>
+
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_44" class="cell_visible">
+    <div id="cell_44" class="cell_evaluated">
+
+        
+        
+        
+            
+                
+            
+            
+                <div class="cell_input_print"><script type="text/code">var('x, y, z, t')
+f(x, y, z)=x*exp(y)*cos(z) - z 
+grad_f=f.gradient()   # gradient of 
+fx, fy, fz = grad_f   # Let grad_f(x, y, z) = (fx, fy, fz)
+print 'The equation of tangent plane is'
+print fx(1, 0, 0)*(x-1) + fy(1, 0, 0)*(y-0) + fz(1, 0, 0)*(z-0)==0   # tangent plane</script></div><br><br><br>
+            
+            
+
+            <div id="introspect_div_44" class="introspection"></div>
+        
+
+        
+        
+
+        
+                
+
+
+    </div>
+</div>
+
+
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_49" class="cell_visible">
+    <div id="cell_49" class="cell_evaluated">
+
+        
+        
+        
+            
+                
+            
+            
+                <div class="cell_input_print"><script type="text/code">x1=(x-1)/fx(1, 0, 0)==t   # Find normal line equations
+y1=(y-0)/fy(1, 0, 0)==t
+z1=(z-0)/fz(1, 0, 0)==t
+print 'Normal line is'
+solve(x1, x), solve(y1, y), solve(z1, z)   # Find (x(t), y(t), z(t))</script></div><br><br><br>
+            
+            
+
+            <div id="introspect_div_49" class="introspection"></div>
+        
+
+        
+        
+
+        
+                
+
+
+    </div>
+</div>
+
+
+    
+<span id="cell_outer_45">
+    
+    <div class="text_cell" id="cell_text_45">
+        <p>&nbsp;</p>
+            <p style="margin-top: 0pt; margin-bottom: 0pt; text-align: justify; line-height: 21.333332061767578px; font-size: 10pt; font-family: 함초롬바탕; margin-right: 0.2pt;"><span style="font-size: 21pt; font-family: '맑은 고딕'; color: #0000ff; line-height: 44.79999923706055px;">Chapter 12. Multiple Integrals</span></p>
+<p style="margin-top: 0pt; margin-bottom: 0pt; text-align: justify; line-height: 21.333332061767578px; font-size: 10pt; font-family: 함초롬바탕;">&nbsp;</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt; text-align: justify; line-height: 21.333332061767578px; font-size: 10pt; font-family: 함초롬바탕;">&nbsp;</p>
+<p><img src="http://matrix.skku.ac.kr/Lab-Book/cal-sage-23.png" width="773"></p>        
+    </div>
+
+
+
+</span>
+
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_47" class="cell_visible">
+    <div id="cell_47" class="cell_evaluated">
+
+        
+        
+        
+            
+                
+            
+            
+                <div class="cell_input_print"><script type="text/code">var('x, y')
+f(x, y)=x+y^2
+integral(integral(f(x, y), x, y, 1), y, 0, 1)   # Evaluate given double integal</script></div><br><br><br>
+            
+            
+
+            <div id="introspect_div_47" class="introspection"></div>
+        
+
+        
+        
+
+        
+                
+
+
+    </div>
+</div>
+
+
+    
+<span id="cell_outer_46">
+    
+    <div class="text_cell" id="cell_text_46">
+        
+<p><img src="http://matrix.skku.ac.kr/Lab-Book/cal-sage-24.png" width="773"></p>        
+    </div>
+
+
+
+</span>
+
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_50" class="cell_visible">
+    <div id="cell_50" class="cell_evaluated">
+
+        
+        
+        
+            
+                
+            
+            
+                <div class="cell_input_print"><script type="text/code">var('x, y, a')
+assume(a>0 or a<0)   # Assume 
+integral(integral(exp(x/y), x, 0, y^2/a), y, 0, a)   # Evaluate given double integal</script></div><br><br><br>
+            
+            
+
+            <div id="introspect_div_50" class="introspection"></div>
+        
+
+        
+        
+
+        
+                
+
+
+    </div>
+</div>
+
+
+    
+<span id="cell_outer_48">
+    
+    <div class="text_cell" id="cell_text_48">
+        
+<p><img src="http://matrix.skku.ac.kr/Lab-Book/cal-sage-25.png" width="773"></p>
+        
+    </div>
+
+
+
+</span>
+
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_52" class="cell_visible">
+    <div id="cell_52" class="cell_evaluated">
+
+        
+        
+        
+            
+                
+            
+            
+                <div class="cell_input_print"><script type="text/code">var('u, v')
+parametric_plot3d((v*sin(u), v*cos(u), 4-v^2), (u, 0, 2*pi), (v ,0 ,2), color='pink')   # Sketch the surface
+# 실행이 안되면 http://sagecell.sagemath.org/ 에서 명령어를 붙여넣기 후 실행
+</script></div><br><br><br>
+            
+            
+
+            <div id="introspect_div_52" class="introspection"></div>
+        
+
+        
+        
+
+        
+                
+
+
+    </div>
+</div>
+
+
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_56" class="cell_visible">
+    <div id="cell_56" class="cell_evaluated">
+
+        
+        
+        
+            
+                
+            
+            
+                <div class="cell_input_print"><script type="text/code">var('r, t')
+f=4-r^2   # ,   
+print 'Volume is', integral(integral(f*r, r, 0, 2), t, 0, 2*pi)   # Find the volume</script></div><br><br><br>
+            
+            
+
+            <div id="introspect_div_56" class="introspection"></div>
+        
+
+        
+        
+
+        
+                
+
+
+    </div>
+</div>
+
+
+    
+<span id="cell_outer_51">
+    
+    <div class="text_cell" id="cell_text_51">
+        
+<p><img src="http://matrix.skku.ac.kr/Lab-Book/cal-sage-26.png" width="773"></p>
+        
+    </div>
+
+
+
+</span>
+
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_54" class="cell_visible">
+    <div id="cell_54" class="cell_evaluated">
+
+        
+        
+        
+            
+                
+            
+            
+                <div class="cell_input_print"><script type="text/code">var('x, y, z')
+sphere = implicit_plot3d(x^2+y^2+z^2==16, (x, -5, 5), (y, -5, 5), (z, -5, 5), color='green', opacity=0.3)   # Draw the sphere
+cylinder = implicit_plot3d(x^2+y^2==4*y, (x, -5, 5), (y, -5, 5), (z, -5, 5), color='skyblue', opacity=0.8)   # Draw the cylinder
+sphere+cylinder
+# 실행이 안되면 http://sagecell.sagemath.org/ 에서 명령어를 붙여넣기 후 실행
+</script></div><br><br><br>
+            
+            
+
+            <div id="introspect_div_54" class="introspection"></div>
+        
+
+        
+        
+
+        
+                
+
+
+    </div>
+</div>
+
+
+    
+<span id="cell_outer_53">
+    
+    <div class="text_cell" id="cell_text_53">
+        
+<p><img src="http://matrix.skku.ac.kr/Lab-Book/cal-sage-27.png" width="773"></p>
+        
+    </div>
+
+
+
+</span>
+
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_57" class="cell_visible">
+    <div id="cell_57" class="cell_evaluated">
+
+        
+        
+        
+            
+                
+            
+            
+                <div class="cell_input_print"><script type="text/code">T = Cylindrical('height', ['radius', 'azimuth'])   # Define transformation 
+T.transform(radius=2, azimuth=pi/2, height=4)</script></div><br><br><br>
+            
+            
+
+            <div id="introspect_div_57" class="introspection"></div>
+        
+
+        
+        
+
+        
+                
+
+
+    </div>
+</div>
+
+
+    
+<span id="cell_outer_55">
+    
+    <div class="text_cell" id="cell_text_55">
+        <p>&nbsp;</p>
+            <p style="margin-top: 0pt; margin-bottom: 0pt; text-align: justify; line-height: 21.333332061767578px; font-size: 10pt; font-family: 함초롬바탕; margin-right: 0.2pt;"><span style="font-size: 21pt; font-family: '맑은 고딕'; color: #0000ff; line-height: 44.79999923706055px;">Chapter 13. Vector Calculus</span></p>
+<p style="margin-top: 0pt; margin-bottom: 0pt; text-align: justify; line-height: 21.333332061767578px; font-size: 10pt; font-family: 함초롬바탕;">&nbsp;</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt; text-align: justify; line-height: 21.333332061767578px; font-size: 10pt; font-family: 함초롬바탕;">&nbsp;</p>
+<p><img src="http://matrix.skku.ac.kr/Lab-Book/cal-sage-28.png" width="773"></p>
+        
+    </div>
+
+
+
+</span>
+
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_59" class="cell_visible">
+    <div id="cell_59" class="cell_evaluated">
+
+        
+        
+        
+            
+                
+            
+            
+                <div class="cell_input_print"><script type="text/code">var('x, y') 
+plot_vector_field((3, 4), (x, -3, 3), (y, -3, 3), aspect_ratio=1)   # Draw the vector field</script></div><br><br><br>
+            
+            
+
+            <div id="introspect_div_59" class="introspection"></div>
+        
+
+        
+        
+
+        
+                
+
+
+    </div>
+</div>
+
+
+    
+<span id="cell_outer_58">
+    
+    <div class="text_cell" id="cell_text_58">
+        
+<p><img src="http://matrix.skku.ac.kr/Lab-Book/cal-sage-29.png" width="773"></p>
+        
+    </div>
+
+
+
+</span>
+
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_61" class="cell_visible">
+    <div id="cell_61" class="cell_evaluated">
+
+        
+        
+        
+            
+                
+            
+            
+                <div class="cell_input_print"><script type="text/code">var('t')
+parametric_plot((cos(t), sin(t)), (t, 0, pi))      # Draw the upper half of the unit circle</script></div><br><br><br>
+            
+            
+
+            <div id="introspect_div_61" class="introspection"></div>
+        
+
+        
+        
+
+        
+                
+
+
+    </div>
+</div>
+
+
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_65" class="cell_visible">
+    <div id="cell_65" class="cell_evaluated">
+
+        
+        
+        
+            
+                
+            
+            
+                <div class="cell_input_print"><script type="text/code">integral(1+cos(t)^3*sin(t)^2*sqrt(diff(cos(t), t)^2+diff(sin(t), t)^2), t, 0, pi)   # Evaluate  where C</script></div><br><br><br>
+            
+            
+
+            <div id="introspect_div_65" class="introspection"></div>
+        
+
+        
+        
+
+        
+                
+
+
+    </div>
+</div>
+
+
+    
+<span id="cell_outer_60">
+    
+    <div class="text_cell" id="cell_text_60">
+        
+<p><img src="http://matrix.skku.ac.kr/Lab-Book/cal-sage-30.png" width="773"></p>
+        
+    </div>
+
+
+
+</span>
+
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_63" class="cell_visible">
+    <div id="cell_63" class="cell_evaluated">
+
+        
+        
+        
+            
+                
+            
+            
+                <div class="cell_input_print"><script type="text/code">var('x, y, z')
+F(x, y, z) = (2*x*y, x^2+2*y*z, 5*y^2)
+P, Q, R = F(x, y, z)   # Let 
+curlF = (diff(R, y)-diff(Q, z), diff(P, z)-diff(R, x), diff(Q, x)-diff(P, y))    # Find the curl of 
+print "Conservative?", bool( curlF==F(x, y, z) )   # Show that given vector field F is conservative</script></div><br><br><br>
+            
+            
+
+            <div id="introspect_div_63" class="introspection"></div>
+        
+
+        
+        
+
+        
+                
+
+
+    </div>
+</div>
+
+
+    
+<span id="cell_outer_62">
+    
+    <div class="text_cell" id="cell_text_62">
+        
+<p><img src="http://matrix.skku.ac.kr/Lab-Book/cal-sage-31.png" width="773"></p>
+        
+    </div>
+
+
+
+</span>
+
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_66" class="cell_visible">
+    <div id="cell_66" class="cell_evaluated">
+
+        
+        
+        
+            
+                
+            
+            
+                <div class="cell_input_print"><script type="text/code">var('x, y, r, t')
+p = implicit_plot(x^2+y^2==9, (x, -3, 3), (y, -3, 3), cmap=["red"])      # Sketch the circle  
+p1 = implicit_plot(x==0, (x,-4,4), (y, -4, 4))   # Sketch -axis
+p2 = implicit_plot(y==0, (x,-4,4), (y, -4, 4))   # Sketch -axis
+show(p+p1+p2, aspect_ratio=1)</script></div><br><br><br>
+            
+            
+
+            <div id="introspect_div_66" class="introspection"></div>
+        
+
+        
+        
+
+        
+                
+
+
+    </div>
+</div>
+
+
+    
+
+    
+    
+
+
+
+
+<div id="cell_outer_71" class="cell_visible">
+    <div id="cell_71" class="cell_evaluated">
+
+        
+        
+        
+            
+                
+            
+            
+                <div class="cell_input_print"><script type="text/code">integral(integral((diff(x, x)-diff(-y, y))*r, r, 0, 3), t, 0, 2*pi) # Evaluate</script></div><br><br><br>
+            
+            
+
+            <div id="introspect_div_71" class="introspection"></div>
+        
+
+        
+        
+
+        
+                
+
+
+    </div>
+</div>
+
+
+    
+<span id="cell_outer_64">
+    
+    <div class="text_cell" id="cell_text_64">
+        
+            <p style="margin-top: 0pt; margin-bottom: 0pt; text-align: center; line-height: 21.333332061767578px; font-size: 10pt; font-family: 함초롬바탕; margin-right: 0.2pt;"><span style="color: #0000ff; font-family: '맑은 고딕'; font-size: 13pt; line-height: 27.733333587646484px; text-align: right;">By Prof. Sang-Gu Lee</span></p>
+<p style="margin-top: 0pt; margin-bottom: 0pt; text-align: center; line-height: 21.333332061767578px; font-size: 10pt; font-family: 함초롬바탕; margin-right: 0.2pt;"><a href="http://matrix.skku.ac.kr/LA-Lab/" target="_self"><span style="font-size: 15pt; font-family: '맑은 고딕'; line-height: 32px;">http://matrix.skku.ac.kr/LA-Lab/</span></a><span style="font-size: 15pt; font-family: '맑은 고딕'; color: #0000ff; line-height: 32px;">&nbsp;</span></p>
+
+<p style="margin-top: 0pt; margin-bottom: 0pt; line-height: 21.333332061767578px; font-size: 10pt; font-family: 함초롬바탕;"><span style="font-family: 굴림;">학년도/학기 : 2014 학년도 1학기&nbsp;&nbsp;&nbsp;&nbsp; 학수번호-분반 :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 이수구분 : 교양,기초</span></p>
+<p style="margin-top: 0pt; margin-bottom: 0pt; line-height: 21.333332061767578px; font-size: 10pt; font-family: 함초롬바탕;"><span style="font-family: 굴림;">교 과 목 명 : 미분적분학 실습 1(수학을 위한 소프트웨어 1)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 교강사명 : &nbsp;...</span></p>
+<p style="margin-top: 0pt; margin-bottom: 0pt; line-height: 21.333332061767578px; font-size: 10pt; font-family: 함초롬바탕;"><span style="color: #2525f5; font-family: '맑은 고딕'; font-size: 13pt; line-height: 27.733333587646484px; text-align: center;">&lt;Pioneers of Korean Modern Mathematics&gt;</span></p>
+<p style="margin-top: 0pt; margin-bottom: 0pt; line-height: 21.333332061767578px; font-size: 10pt; font-family: 함초롬바탕;"><a style="font-size: 10pt; text-align: center;" href="http://matrix.skku.ac.kr/K-Math-History/index.htm" target="_self"><span style="font-family: '맑은 고딕';">http://matrix.skku.ac.kr/K-Math-History/index.htm</span></a><span style="font-family: '맑은 고딕';">&nbsp;</span></p>
+<p style="margin-top: 0pt; margin-bottom: 0pt; line-height: 21.333332061767578px; font-size: 10pt; font-family: 함초롬바탕;"><span style="font-size: 19pt; font-family: '맑은 고딕'; color: #0000ff; line-height: 50.66666793823242px;">written by Sang-Gu Lee&nbsp;</span><span style="font-size: 17pt; font-family: '맑은 고딕'; color: #0000ff; line-height: 45.33333206176758px;">with Kyung-Won Kim</span></p>
+<p style="margin-top: 0pt; margin-bottom: 0pt; line-height: 21.333332061767578px; font-size: 10pt; font-family: 함초롬바탕;"><span style="color: #ac00ff; font-family: '맑은 고딕'; font-size: 10pt; text-align: right;">based on Books of Prof. Sang-Gu Lee (Calculus and Linear Algebra with Sage)</span></p>
+<p style="margin-top: 0pt; margin-bottom: 0pt; line-height: 21.333332061767578px; font-size: 10pt; font-family: 함초롬바탕;"><span style="color: #ac00ff; font-family: '맑은 고딕'; font-size: 11pt; line-height: 23.46666717529297px; text-align: right;">&nbsp;collected and rearranged by Kyung-Won Kim, Shaowei Sun and Sang-Gu Lee</span></p>
+<p style="margin-top: 0pt; margin-bottom: 0pt; line-height: 21.333332061767578px; font-size: 10pt; font-family: 함초롬바탕;"><img style="font-size: 8pt; line-height: 16.853334426879883px; text-align: center;" src="http://matrix.skku.ac.kr/Lab-Book/PIC3CB4.png" border="0" alt="" hspace="0" vspace="0" width="297" height="38" /><span style="font-size: 8pt; line-height: 16.853334426879883px; text-align: center;">&nbsp;&nbsp;&nbsp;by&nbsp;</span><img style="font-size: 8pt; line-height: 16.853334426879883px; text-align: center;" src="http://matrix.skku.ac.kr/Lab-Book/PIC3CC5.png" border="0" alt="그림입니다. 원본 그림의 이름: skku.bmp 원본 그림의 크기: 가로 200pixel, 세로 89pixel" hspace="0" vspace="0" width="128" height="57" /></p>
+<p style="margin-top: 0pt; margin-bottom: 0pt; line-height: 21.333332061767578px; font-size: 10pt; font-family: 함초롬바탕;"><img style="font-family: '맑은 고딕'; font-size: 10pt; line-height: 21.066665649414063px; text-align: center;" src="http://matrix.skku.ac.kr/Lab-Book/PIC3CC6.png" border="0" alt="그림입니다. 원본 그림의 이름: Matrix-02.bmp 원본 그림의 크기: 가로 460pixel, 세로 275pixel" hspace="0" vspace="0" width="460" height="275" /></p>
+        
+    </div>
+
+
+
+</span>
+
+    
+
+    
+    
+
+ 
+    
+        
+                
+
+
+    </div>
+</div>
+
+
+
+
+<hr class="usercontrol" />
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+
+    </body>
+</html>
